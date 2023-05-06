@@ -47,7 +47,7 @@ namespace mfm
 			if( 0 < temp.GetDistance() )
 			{
 				//
-				// Head
+				// Add Head Range
 				//
 				if( temp.GetStart() < ( *out_mine_linear_index ) )
 				{
@@ -55,7 +55,7 @@ namespace mfm
 				}
 
 				//
-				// Tail
+				// Add Tail Range
 				//
 				if( temp.GetEnd() > ( *out_mine_linear_index ) )
 				{
