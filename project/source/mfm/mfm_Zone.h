@@ -11,7 +11,7 @@ namespace mfm
 
 
 
-	class Zone
+	class Stage
 	{
 	public:
 		using Terrain = r2::Grid<Tile>;
@@ -19,7 +19,7 @@ namespace mfm
 
 
 
-		Zone( const uint32_t width, const uint32_t height );
+		Stage( const uint32_t width, const uint32_t height );
 
 
 
@@ -60,5 +60,5 @@ namespace mfm
 		ActorContainer mActorContainer;
 	};
 
-	void RoomBuilder( Zone* out_room );
+	void RoomBuilder( Stage* out_room );
 }

@@ -4,14 +4,14 @@
 
 namespace mfm
 {
-	Zone::Zone( const uint32_t width, const uint32_t height ) :
+	Stage::Stage( const uint32_t width, const uint32_t height ) :
 		mTerrain( width, height, Tile::Empty )
 		, mActorContainer()
 	{}
 
 
 
-	void RoomBuilder( Zone* out_room )
+	void RoomBuilder( Stage* out_room )
 	{
 		const r2::RectInt rect( 1, 1, static_cast<int>( out_room->GetWidth() ) - 3, static_cast<int>( out_room->GetHeight() ) - 3 );
 

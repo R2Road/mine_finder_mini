@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace test_mfm_zone
+namespace test_mfm_stage
 {
 	class Declaration : public r2cm::iItem
 	{

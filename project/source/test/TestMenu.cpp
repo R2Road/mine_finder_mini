@@ -31,9 +31,9 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'q', test_mfm_zone::Declaration() );
-		ret->AddItem( 'w', test_mfm_zone::Builder() );
-		ret->AddItem( 'e', test_mfm_zone::Demo() );
+		ret->AddItem( 'q', test_mfm_stage::Declaration() );
+		ret->AddItem( 'w', test_mfm_stage::Builder() );
+		ret->AddItem( 'e', test_mfm_stage::Demo() );
 
 
 

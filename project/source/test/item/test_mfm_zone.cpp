@@ -8,14 +8,14 @@
 
 #include "mfm/mfm_Zone.h"
 
-namespace test_mfm_zone
+namespace test_mfm_stage
 {
 	std::ostream& operator<<( std::ostream& o, mfm::Tile t )
 	{
 		return o << static_cast<int>( t );
 	}
 
-	void PrintRoom( const mfm::Zone& z )
+	void PrintRoom( const mfm::Stage& z )
 	{
 		const auto pivot = r2cm::WindowUtility::GetCursorPoint();
 
@@ -35,7 +35,7 @@ namespace test_mfm_zone
 	{
 		return []()->const char*
 		{
-			return "Zone : Declaration";
+			return "Stage : Declaration";
 		};
 	}
 	r2cm::DoFunctionT Declaration::GetDoFunction() const
@@ -45,7 +45,7 @@ namespace test_mfm_zone
 			LS();
 
 			{
-				DECLARATION_MAIN( const mfm::Zone z( 2, 2 ) );
+				DECLARATION_MAIN( const mfm::Stage z( 2, 2 ) );
 
 				LF();
 
@@ -66,7 +66,7 @@ namespace test_mfm_zone
 	{
 		return []()->const char*
 		{
-			return "Zone : Builder";
+			return "Stage : Builder";
 		};
 	}
 	r2cm::DoFunctionT Builder::GetDoFunction() const
@@ -76,7 +76,7 @@ namespace test_mfm_zone
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::Zone z( 10, 10 ) );
+				DECLARATION_MAIN( mfm::Stage z( 10, 10 ) );
 
 				LF();
 
@@ -102,7 +102,7 @@ namespace test_mfm_zone
 	{
 		return []()->const char*
 		{
-			return "Zone : Demo";
+			return "Stage : Demo";
 		};
 	}
 	r2cm::DoFunctionT Demo::GetDoFunction() const
@@ -111,7 +111,7 @@ namespace test_mfm_zone
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::Zone z( 10, 10 ) );
+			DECLARATION_MAIN( mfm::Stage z( 10, 10 ) );
 
 			LS();
 
