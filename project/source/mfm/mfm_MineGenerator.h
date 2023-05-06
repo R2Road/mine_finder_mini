@@ -2,14 +2,15 @@
 
 #include <list>
 
-#include "r2/r2_RangeUInt.h"
+#include "r2/r2_Range.h"
 
 namespace mfm
 {
 	class MineGenerator
 	{
 	public:
-		using ElementT = r2::RangeUInt;
+		using ValueT = unsigned int;
+		using ElementT = r2::Range<ValueT>;
 		using ContainerT = std::list<ElementT>;
 
 
@@ -18,11 +19,11 @@ namespace mfm
 
 
 
-		const ElementT::ValueT GetStart() const
+		const ValueT GetStart() const
 		{
 			return mRange.GetStart();
 		}
-		const ElementT::ValueT GetEnd() const
+		const ValueT GetEnd() const
 		{
 			return mRange.GetEnd();
 		}

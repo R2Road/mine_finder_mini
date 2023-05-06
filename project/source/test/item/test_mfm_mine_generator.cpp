@@ -10,13 +10,13 @@
 
 namespace test_mfm_mine_generator
 {
-	std::ostream& operator<<( std::ostream& o, const r2::RangeUInt& r )
+	std::ostream& operator<<( std::ostream& o, const mfm::MineGenerator::ElementT& r )
 	{
 		return o << r.GetStart() << "   " << r.GetEnd();
 	}
 
 
-	void PrintList( const std::list<r2::RangeUInt>& l )
+	void PrintList( const mfm::MineGenerator::ContainerT& l )
 	{
 		const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -143,9 +143,8 @@ namespace test_mfm_mine_generator
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( std::list<r2::RangeUInt> l );
-			PROCESS_MAIN( l.push_back( r2::RangeUInt( 0, 9 ) ) );
-			PrintList( l );
+			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+			PrintList( m.GetRangeContainer() );
 
 			std::cout << r2cm::split;
 
