@@ -11,14 +11,14 @@ namespace test_mfm_mine_generator
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Ready_Clear : public r2cm::iItem
+	class Do : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Do : public r2cm::iItem
+	class Ready_Clear : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

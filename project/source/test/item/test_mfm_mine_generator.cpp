@@ -88,6 +88,36 @@ namespace test_mfm_mine_generator
 
 
 
+	r2cm::TitleFunctionT Do::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Mine Generator : Do";
+		};
+	}
+	r2cm::DoFunctionT Do::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+			PrintList( m.GetRangeContainer() );
+
+			LS();
+
+			{
+
+			}
+
+			LS();
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::TitleFunctionT Ready_Clear::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -116,36 +146,6 @@ namespace test_mfm_mine_generator
 
 				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
 				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
-			}
-
-			LS();
-
-			return r2cm::eDoLeaveAction::Pause;
-		};
-	}
-
-
-
-	r2cm::TitleFunctionT Do::GetTitleFunction() const
-	{
-		return []()->const char*
-		{
-			return "Mine Generator : Do";
-		};
-	}
-	r2cm::DoFunctionT Do::GetDoFunction() const
-	{
-		return []()->r2cm::eDoLeaveAction
-		{
-			LS();
-
-			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
-			PrintList( m.GetRangeContainer() );
-
-			LS();
-
-			{
-
 			}
 
 			LS();
