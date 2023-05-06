@@ -25,7 +25,7 @@ namespace mfm
 				}
 				else
 				{
-					out_room->SetTile( x, y, Tile::Wall );
+					out_room->SetTile( x, y, Tile::Mine );
 				}
 			}
 		}

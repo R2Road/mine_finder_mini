@@ -6,7 +6,7 @@ namespace mfm
 {
 	using Tile = enum class Tile {
 		Empty,
-		Wall,
+		Mine,
 	};
 
 
