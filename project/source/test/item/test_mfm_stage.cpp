@@ -15,20 +15,20 @@ namespace test_mfm_stage
 		return o << static_cast<int>( t );
 	}
 
-	void PrintRoom( const mfm::Stage& z )
+	void PrintRoom( const mfm::Stage& s )
 	{
 		const auto pivot = r2cm::WindowUtility::GetCursorPoint();
 
-		for( int y = 0; z.GetHeight() > y; ++y )
+		for( int y = 0; s.GetHeight() > y; ++y )
 		{
-			for( int x = 0; z.GetWidth() > x; ++x )
+			for( int x = 0; s.GetWidth() > x; ++x )
 			{
-				std::cout << z.GetTile( x, y ) << " ";
+				std::cout << s.GetTile( x, y ) << " ";
 			}
 			LF();
 		}
 
-		r2cm::WindowUtility::MoveCursorPoint( { 0, pivot.y + (short)z.GetHeight() } );
+		r2cm::WindowUtility::MoveCursorPoint( { 0, pivot.y + (short)s.GetHeight() } );
 	}
 
 	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
@@ -45,13 +45,13 @@ namespace test_mfm_stage
 			LS();
 
 			{
-				DECLARATION_MAIN( const mfm::Stage z( 2, 2 ) );
+				DECLARATION_MAIN( const mfm::Stage s( 2, 2 ) );
 
 				LF();
 
-				EXPECT_EQ( 2, z.GetWidth() );
-				EXPECT_EQ( 2, z.GetHeight() );
-				EXPECT_EQ( 4, z.GetSize() );
+				EXPECT_EQ( 2, s.GetWidth() );
+				EXPECT_EQ( 2, s.GetHeight() );
+				EXPECT_EQ( 4, s.GetSize() );
 			}
 
 			LS();
@@ -76,15 +76,15 @@ namespace test_mfm_stage
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::Stage z( 10, 10 ) );
+				DECLARATION_MAIN( mfm::Stage s( 10, 10 ) );
 
 				LF();
 
-				for( int y = 0; z.GetHeight() > y; ++y )
+				for( int y = 0; s.GetHeight() > y; ++y )
 				{
-					for( int x = 0; z.GetWidth() > x; ++x )
+					for( int x = 0; s.GetWidth() > x; ++x )
 					{
-						std::cout << z.GetTile( x, y ) << " ";
+						std::cout << s.GetTile( x, y ) << " ";
 					}
 					LF();
 				}
@@ -111,7 +111,7 @@ namespace test_mfm_stage
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::Stage z( 10, 10 ) );
+			DECLARATION_MAIN( mfm::Stage s( 10, 10 ) );
 
 			LS();
 
@@ -148,7 +148,7 @@ namespace test_mfm_stage
 					// View
 					//
 					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
-					PrintRoom( z );
+					PrintRoom( s );
 
 					//
 					// Input
