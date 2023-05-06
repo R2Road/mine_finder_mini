@@ -4,7 +4,7 @@
 
 namespace mfm
 {
-	MineGenerator::MineGenerator( const unsigned int start, const unsigned int end ) :
+	MinePositionGenerator::MinePositionGenerator( const unsigned int start, const unsigned int end ) :
 		mRange(
 			start < end ? start : end
 			, start < end ? end : start
@@ -14,13 +14,13 @@ namespace mfm
 		Clear();
 	}
 
-	void MineGenerator::Clear()
+	void MinePositionGenerator::Clear()
 	{
 		mRangeContainer.clear();
 		mRangeContainer.push_back( mRange );
 	}
 
-	bool MineGenerator::Get( ValueT* out_mine_linear_index )
+	bool MinePositionGenerator::Get( ValueT* out_mine_linear_index )
 	{
 		bool ret = false;
 

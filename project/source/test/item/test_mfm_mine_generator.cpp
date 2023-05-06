@@ -8,15 +8,15 @@
 
 #include "mfm/mfm_MineGenerator.h"
 
-namespace test_mfm_mine_generator
+namespace test_mfm_mine_position_generator
 {
-	std::ostream& operator<<( std::ostream& o, const mfm::MineGenerator::ElementT& r )
+	std::ostream& operator<<( std::ostream& o, const mfm::MinePositionGenerator::ElementT& r )
 	{
 		return o << r.GetStart() << "   " << r.GetEnd();
 	}
 
 
-	void PrintList( const mfm::MineGenerator& m )
+	void PrintList( const mfm::MinePositionGenerator& m )
 	{
 		const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -52,7 +52,7 @@ namespace test_mfm_mine_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9 ) );
 
 				LF();
 
@@ -72,7 +72,7 @@ namespace test_mfm_mine_generator
 
 				LF();
 
-				DECLARATION_MAIN( mfm::MineGenerator m( 9, 0 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 0 ) );
 
 				LF();
 
@@ -107,12 +107,12 @@ namespace test_mfm_mine_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MineGenerator m( 0, 0 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 0 ) );
 				PrintList( m );
 
 				LF();
 
-				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+				DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
 				EXPECT_TRUE( m.Get( &position ) );
 				EXPECT_EQ( 0u, position );
 				EXPECT_TRUE( m.GetRangeContainer().empty() );
@@ -125,12 +125,12 @@ namespace test_mfm_mine_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MineGenerator m( 9, 9 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 9 ) );
 				PrintList( m );
 
 				LF();
 
-				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+				DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
 				EXPECT_TRUE( m.Get( &position ) );
 				EXPECT_EQ( 9u, position );
 				EXPECT_TRUE( m.GetRangeContainer().empty() );
@@ -143,8 +143,8 @@ namespace test_mfm_mine_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MineGenerator m( 0, 3 ) );
-				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 3 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
 
 				LF();
 
@@ -192,7 +192,7 @@ namespace test_mfm_mine_generator
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+			DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9 ) );
 
 			LS();
 

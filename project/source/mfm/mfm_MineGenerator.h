@@ -6,7 +6,7 @@
 
 namespace mfm
 {
-	class MineGenerator
+	class MinePositionGenerator
 	{
 	public:
 		using ValueT = unsigned int;
@@ -15,7 +15,7 @@ namespace mfm
 
 
 
-		MineGenerator( const unsigned int start, const unsigned int end );
+		MinePositionGenerator( const unsigned int start, const unsigned int end );
 
 
 

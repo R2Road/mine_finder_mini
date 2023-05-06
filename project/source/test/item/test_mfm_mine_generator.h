@@ -2,7 +2,7 @@
 
 #include "r2cm/r2cm_iItem.h"
 
-namespace test_mfm_mine_generator
+namespace test_mfm_mine_position_generator
 {
 	class Declaration : public r2cm::iItem
 	{
