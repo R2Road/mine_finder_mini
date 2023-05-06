@@ -25,7 +25,7 @@ namespace test_mfm_zone
 			{
 				std::cout << z.GetTile( x, y ) << " ";
 			}
-			std::cout << r2cm::linefeed;
+			LF();
 		}
 
 		r2cm::WindowUtility::MoveCursorPoint( { 0, pivot.y + (short)z.GetHeight() } );
@@ -47,7 +47,7 @@ namespace test_mfm_zone
 			{
 				DECLARATION_MAIN( const mfm::Zone z( 2, 2 ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				EXPECT_EQ( 2, z.GetWidth() );
 				EXPECT_EQ( 2, z.GetHeight() );
@@ -78,7 +78,7 @@ namespace test_mfm_zone
 			{
 				DECLARATION_MAIN( mfm::Zone z( 10, 10 ) );
 
-				std::cout << r2cm::linefeed;
+				LF();
 
 				for( int y = 0; z.GetHeight() > y; ++y )
 				{
@@ -86,7 +86,7 @@ namespace test_mfm_zone
 					{
 						std::cout << z.GetTile( x, y ) << " ";
 					}
-					std::cout << r2cm::linefeed;
+					LF();
 				}
 			}
 
