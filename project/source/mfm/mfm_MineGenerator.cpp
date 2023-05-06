@@ -5,7 +5,10 @@
 namespace mfm
 {
 	MineGenerator::MineGenerator( const unsigned int start, const unsigned int end ) :
-		mRange( start, end )
+		mRange(
+			start < end ? start : end
+			, start < end ? end : start
+		)
 		, mRangeContainer()
 	{}
 }

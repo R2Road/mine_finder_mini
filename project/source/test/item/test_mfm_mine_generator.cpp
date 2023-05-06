@@ -40,11 +40,22 @@ namespace test_mfm_mine_generator
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+			{
+				DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+
+				LF();
+
+				EXPECT_EQ( 0, m.GetStart() );
+				EXPECT_EQ( 9, m.GetEnd() );
+			}
 
 			std::cout << r2cm::split;
 
 			{
+				DECLARATION_MAIN( mfm::MineGenerator m( 9, 0 ) );
+
+				LF();
+
 				EXPECT_EQ( 0, m.GetStart() );
 				EXPECT_EQ( 9, m.GetEnd() );
 			}
