@@ -63,6 +63,10 @@ namespace test_mfm_mine_generator
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "생성자의 start 인자가 end 인자 보다 큰 경우." );
+
+				LF();
+
 				DECLARATION_MAIN( mfm::MineGenerator m( 9, 0 ) );
 
 				LF();
