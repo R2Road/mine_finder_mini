@@ -39,6 +39,7 @@ namespace mfm
 
 
 		void Clear();
+		bool Get( ValueT* out_mine_linear_index );
 
 
 

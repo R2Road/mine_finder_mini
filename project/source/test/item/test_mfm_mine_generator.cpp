@@ -16,11 +16,16 @@ namespace test_mfm_mine_generator
 	}
 
 
-	void PrintList( const mfm::MineGenerator::ContainerT& l )
+	void PrintList( const mfm::MineGenerator& m )
 	{
 		const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
 
-		for( const auto& r : l )
+		for( int cur = m.GetStart(), end = m.GetEnd(); end >= cur; ++cur )
+		{
+			r2cm::WindowUtility::FillColor( cursor_point.x + ( cur * 2 ), cursor_point.y, r2cm::WindowUtility::eColor::FG_White | r2cm::WindowUtility::eColor::BG_Blue );
+		}
+
+		for( const auto& r : m.GetRangeContainer() )
 		{
 			for( int cur = r.GetStart(), end = r.GetEnd(); end >= cur; ++cur )
 			{
@@ -101,13 +106,69 @@ namespace test_mfm_mine_generator
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
-			PrintList( m.GetRangeContainer() );
+			{
+				DECLARATION_MAIN( mfm::MineGenerator m( 0, 0 ) );
+				PrintList( m );
+
+				LF();
+
+				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+				EXPECT_TRUE( m.Get( &position ) );
+				EXPECT_EQ( 0u, position );
+				EXPECT_TRUE( m.GetRangeContainer().empty() );
+
+				LF();
+
+				PrintList( m );
+			}
 
 			LS();
 
 			{
+				DECLARATION_MAIN( mfm::MineGenerator m( 9, 9 ) );
+				PrintList( m );
 
+				LF();
+
+				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+				EXPECT_TRUE( m.Get( &position ) );
+				EXPECT_EQ( 9u, position );
+				EXPECT_TRUE( m.GetRangeContainer().empty() );
+
+				LF();
+
+				PrintList( m );
+			}
+
+			LS();
+
+			{
+				DECLARATION_MAIN( mfm::MineGenerator m( 0, 3 ) );
+				DECLARATION_MAIN( mfm::MineGenerator::ValueT position );
+
+				LF();
+
+				EXPECT_TRUE( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+
+				LF();
+
+				EXPECT_TRUE( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+
+				LF();
+
+				EXPECT_TRUE( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+
+				LF();
+
+				EXPECT_TRUE( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
 			}
 
 			LS();
