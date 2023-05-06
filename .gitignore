@@ -1,0 +1,4 @@
+project/.vs/*
+project/Debug/*
+project/Release/*
+project/x64/*
