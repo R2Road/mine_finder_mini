@@ -9,7 +9,8 @@ namespace mfm
 	class MineGenerator
 	{
 	public:
-		using ContainerT = std::list<r2::RangeUInt>;
+		using ElementT = r2::RangeUInt;
+		using ContainerT = std::list<ElementT>;
 
 
 
@@ -17,15 +18,15 @@ namespace mfm
 
 
 
-		const r2::RangeUInt::ValueT GetStart() const
+		const ElementT::ValueT GetStart() const
 		{
 			return mRange.GetStart();
 		}
-		const r2::RangeUInt::ValueT GetEnd() const
+		const ElementT::ValueT GetEnd() const
 		{
 			return mRange.GetEnd();
 		}
-		const r2::RangeUInt& GetRange() const
+		const ElementT& GetRange() const
 		{
 			return mRange;
 		}
@@ -42,7 +43,7 @@ namespace mfm
 
 
 	private:
-		const r2::RangeUInt mRange;
+		const ElementT mRange;
 		ContainerT mRangeContainer;
 	};
 }
