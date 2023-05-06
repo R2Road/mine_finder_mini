@@ -15,7 +15,6 @@ namespace mfm
 	{
 	public:
 		using Terrain = r2::Grid<Tile>;
-		using ActorContainer = std::vector<class Actor*>;
 
 
 
@@ -57,7 +56,6 @@ namespace mfm
 
 	private:
 		Terrain mTerrain;
-		ActorContainer mActorContainer;
 	};
 
 	void RoomBuilder( Stage* out_room );

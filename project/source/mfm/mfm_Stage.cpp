@@ -6,7 +6,6 @@ namespace mfm
 {
 	Stage::Stage( const uint32_t width, const uint32_t height ) :
 		mTerrain( width, height, Tile::Empty )
-		, mActorContainer()
 	{}
 
 
