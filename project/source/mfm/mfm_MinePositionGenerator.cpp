@@ -28,7 +28,7 @@ namespace mfm
 		{
 			ret = true;
 
-			const int range_index = r2::Random::GetInt( 0u, mRangeContainer.size() - 1u );
+			const int range_index = r2::Random::GetInt( 0, static_cast<int>( mRangeContainer.size() - 1u ) );
 			auto range_itr = mRangeContainer.begin();
 			for( int i = 0; range_index > i; ++i )
 			{
