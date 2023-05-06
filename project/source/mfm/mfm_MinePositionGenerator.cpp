@@ -1,4 +1,4 @@
-#include "mfm_MineGenerator.h"
+#include "mfm_MinePositionGenerator.h"
 
 #include "r2/r2_Random.h"
 

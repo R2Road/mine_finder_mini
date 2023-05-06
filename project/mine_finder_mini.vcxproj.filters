@@ -263,14 +263,14 @@
     <ClCompile Include="external\r2\r2_RangeInt.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\item\test_mfm_mine_generator.cpp">
-      <Filter>test\item</Filter>
-    </ClCompile>
-    <ClCompile Include="source\mfm\mfm_MineGenerator.cpp">
-      <Filter>mfm</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_RangeUInt.cpp">
       <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mfm\mfm_MinePositionGenerator.cpp">
+      <Filter>mfm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_mfm_mine_position_generator.cpp">
+      <Filter>test\item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -617,14 +617,14 @@
     <ClInclude Include="external\r2\r2_RangeInt.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\item\test_mfm_mine_generator.h">
-      <Filter>test\item</Filter>
-    </ClInclude>
-    <ClInclude Include="source\mfm\mfm_MineGenerator.h">
-      <Filter>mfm</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_RangeUInt.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="source\mfm\mfm_MinePositionGenerator.h">
+      <Filter>mfm</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_mfm_mine_position_generator.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

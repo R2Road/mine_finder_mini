@@ -1,4 +1,4 @@
-#include "test_mfm_mine_generator.h"
+#include "test_mfm_mine_position_generator.h"
 
 #include <list>
 
@@ -6,7 +6,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "mfm/mfm_MineGenerator.h"
+#include "mfm/mfm_MinePositionGenerator.h"
 
 namespace test_mfm_mine_position_generator
 {
