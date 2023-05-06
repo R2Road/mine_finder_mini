@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/test_mfm_mine_generator.h"
 #include "item/test_mfm_zone.h"
 
 r2cm::TitleFunctionT TestMenu::GetTitleFunction() const
@@ -20,9 +21,17 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 {
 	return []( r2cm::MenuProcessor* ret )
 	{
-		ret->AddItem( '1', test_mfm_zone::Declaration() );
-		ret->AddItem( '2', test_mfm_zone::Builder() );
-		ret->AddItem( '3', test_mfm_zone::Demo() );
+		ret->AddItem( '1', test_mfm_mine_generator::Do() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'q', test_mfm_zone::Declaration() );
+		ret->AddItem( 'w', test_mfm_zone::Builder() );
+		ret->AddItem( 'e', test_mfm_zone::Demo() );
 
 
 

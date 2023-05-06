@@ -263,6 +263,9 @@
     <ClCompile Include="external\r2\r2_RangeInt.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="source\test\item\test_mfm_mine_generator.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -607,6 +610,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_RangeInt.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_mfm_mine_generator.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
