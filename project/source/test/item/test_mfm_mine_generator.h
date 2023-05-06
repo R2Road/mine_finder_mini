@@ -18,7 +18,7 @@ namespace test_mfm_mine_generator
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Ready_Clear : public r2cm::iItem
+	class Clear : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

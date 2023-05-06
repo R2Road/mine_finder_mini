@@ -118,14 +118,14 @@ namespace test_mfm_mine_generator
 
 
 
-	r2cm::TitleFunctionT Ready_Clear::GetTitleFunction() const
+	r2cm::TitleFunctionT Clear::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Mine Generator : Ready, Clear";
+			return "Mine Generator : Clear";
 		};
 	}
-	r2cm::DoFunctionT Ready_Clear::GetDoFunction() const
+	r2cm::DoFunctionT Clear::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
