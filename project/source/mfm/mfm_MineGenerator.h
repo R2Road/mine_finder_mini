@@ -9,6 +9,10 @@ namespace mfm
 	class MineGenerator
 	{
 	public:
+		using ContainerT = std::list<r2::RangeUInt>;
+
+
+
 		MineGenerator( const unsigned int start, const unsigned int end );
 
 
@@ -25,7 +29,7 @@ namespace mfm
 		{
 			return mRange;
 		}
-		const std::list<r2::RangeUInt>& GetRangeContainer() const
+		const ContainerT& GetRangeContainer() const
 		{
 			return mRangeContainer;
 		}
@@ -39,6 +43,6 @@ namespace mfm
 
 	private:
 		const r2::RangeUInt mRange;
-		std::list<r2::RangeUInt> mRangeContainer;
+		ContainerT mRangeContainer;
 	};
 }
