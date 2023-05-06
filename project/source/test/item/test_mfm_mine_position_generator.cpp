@@ -116,9 +116,6 @@ namespace test_mfm_mine_position_generator
 				EXPECT_TRUE( m.Get( &position ) );
 				EXPECT_EQ( 0u, position );
 				EXPECT_TRUE( m.GetRangeContainer().empty() );
-
-				LF();
-
 				PrintList( m );
 			}
 
@@ -134,9 +131,6 @@ namespace test_mfm_mine_position_generator
 				EXPECT_TRUE( m.Get( &position ) );
 				EXPECT_EQ( 9u, position );
 				EXPECT_TRUE( m.GetRangeContainer().empty() );
-
-				LF();
-
 				PrintList( m );
 			}
 
@@ -169,6 +163,11 @@ namespace test_mfm_mine_position_generator
 				EXPECT_TRUE( m.Get( &position ) );
 				OUTPUT_VALUE( position );
 				PrintList( m );
+
+				LF();
+
+				EXPECT_FALSE( m.Get( &position ) );
+				EXPECT_TRUE( m.GetRangeContainer().empty() );
 			}
 
 			LS();
