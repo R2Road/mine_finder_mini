@@ -42,7 +42,7 @@ namespace test_mfm_zone
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( const mfm::Zone z( 2, 2 ) );
@@ -54,7 +54,7 @@ namespace test_mfm_zone
 				EXPECT_EQ( 4, z.GetSize() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -73,7 +73,7 @@ namespace test_mfm_zone
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( mfm::Zone z( 10, 10 ) );
@@ -90,7 +90,7 @@ namespace test_mfm_zone
 				}
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -109,11 +109,11 @@ namespace test_mfm_zone
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( mfm::Zone z( 10, 10 ) );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				const auto pivot_point = r2cm::WindowUtility::GetCursorPoint();
@@ -158,7 +158,7 @@ namespace test_mfm_zone
 				} while( 27 != input );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};

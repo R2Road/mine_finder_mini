@@ -44,7 +44,7 @@ namespace test_mfm_mine_generator
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
@@ -55,7 +55,7 @@ namespace test_mfm_mine_generator
 				EXPECT_EQ( 9, m.GetEnd() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				DECLARATION_MAIN( mfm::MineGenerator m( 9, 0 ) );
@@ -66,7 +66,7 @@ namespace test_mfm_mine_generator
 				EXPECT_EQ( 9, m.GetEnd() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -85,7 +85,7 @@ namespace test_mfm_mine_generator
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
 
@@ -93,7 +93,7 @@ namespace test_mfm_mine_generator
 
 			EXPECT_TRUE( m.GetRangeContainer().empty() );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				OUTPUT_SUBJECT( "Ready 함수는 생성자에서 주어진 Range 를 내부의 Range 컨테이너에 넣는다." );
@@ -108,7 +108,7 @@ namespace test_mfm_mine_generator
 				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 				OUTPUT_SUBJECT( "Clear 내부의 Range 컨테이너를 비운다." );
@@ -122,7 +122,7 @@ namespace test_mfm_mine_generator
 				EXPECT_TRUE( m.GetRangeContainer().empty() );
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
@@ -141,18 +141,18 @@ namespace test_mfm_mine_generator
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
-			std::cout << r2cm::split;
+			LS();
 
 			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
 			PrintList( m.GetRangeContainer() );
 
-			std::cout << r2cm::split;
+			LS();
 
 			{
 
 			}
 
-			std::cout << r2cm::split;
+			LS();
 
 			return r2cm::eDoLeaveAction::Pause;
 		};
