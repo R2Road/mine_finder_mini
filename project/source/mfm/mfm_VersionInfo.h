@@ -34,7 +34,7 @@ namespace mfm
 					"### Game 구성 ###"
 			"\n"
 			"\n"	"> " "Game               "  " : "  "..."
-			"\n"	"> " "Zone               "  " : "  "..."
+			"\n"	"> " "Stage              "  " : "  "..."
 			"\n"	"> " "Mine               "
 			"\n"	"\t - "		"Grid의 Linear Index를 활용."
 			"\n"	"\t - "		"시작 Index, 끝 Index 를 멤버로 가지는 범위 Struct 를 만든다"
@@ -46,6 +46,16 @@ namespace mfm
 		
 		
 		
+		const char* const String4Road2Version_0_0_1_0 = {
+			"### Road 2 Version 0.0.1.0 ###"
+			"\n"
+			"\n"	"[ ] " "Stage"
+			"\n"	"    " "[ ] " "Add Class : Stage"
+			"\n"	"    " "[o] " "Add Class : Mine Generator"
+			"\n"	"    " "[ ] " "Update Class : Stage : Build"
+			"\n"	"[ ] " "Stage View"
+		};
+
 		const char* const String4Road2Version_0_0_0_0 = {
 			"### Road 2 Version 0.0.0.0 ###"
 			"\n"
@@ -53,6 +63,8 @@ namespace mfm
 			"\n"	"[o] " "Copy Project \"mini-rogue\""
 			"\n"	"[o] " "Cleanup"
 		};
+
+		const char* const String4Road2Version = String4Road2Version_0_0_1_0;
 
 	} VersionInfo;
 }
