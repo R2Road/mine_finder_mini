@@ -23,7 +23,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 	{
 		ret->AddItem( '1', test_mfm_mine_generator::Declaration() );
 		ret->AddItem( '2', test_mfm_mine_generator::Do() );
-		ret->AddItem( '3', test_mfm_mine_generator::Ready_Clear() );
+		ret->AddItem( '3', test_mfm_mine_generator::Clear() );
 
 
 
