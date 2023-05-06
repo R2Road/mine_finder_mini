@@ -82,6 +82,7 @@
     <ClCompile Include="external\r2\r2_PointUint.cpp" />
     <ClCompile Include="external\r2\r2_Random.cpp" />
     <ClCompile Include="external\r2\r2_RangeInt.cpp" />
+    <ClCompile Include="external\r2\r2_RangeUInt.cpp" />
     <ClCompile Include="external\r2\r2_RectInt.cpp" />
     <ClCompile Include="external\r2\r2_RectTestUtility.cpp" />
     <ClCompile Include="external\r2\r2_SizeInt.cpp" />
@@ -91,6 +92,7 @@
     <ClCompile Include="source\mfm\mfm_CompanyScene.cpp" />
     <ClCompile Include="source\mfm\mfm_EntryScene.cpp" />
     <ClCompile Include="source\mfm\mfm_Game.cpp" />
+    <ClCompile Include="source\mfm\mfm_MineGenerator.cpp" />
     <ClCompile Include="source\mfm\mfm_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="source\mfm\mfm_TextureTable.cpp" />
     <ClCompile Include="source\mfm\mfm_Zone.cpp" />
@@ -188,6 +190,7 @@
     <ClInclude Include="external\r2\r2_Random.h" />
     <ClInclude Include="external\r2\r2_Range.h" />
     <ClInclude Include="external\r2\r2_RangeInt.h" />
+    <ClInclude Include="external\r2\r2_RangeUInt.h" />
     <ClInclude Include="external\r2\r2_Rect.h" />
     <ClInclude Include="external\r2\r2_RectInt.h" />
     <ClInclude Include="external\r2\r2_RectTestUtility.h" />
@@ -208,6 +211,7 @@
     <ClInclude Include="source\mfm\mfm_DirectorConfig.h" />
     <ClInclude Include="source\mfm\mfm_EntryScene.h" />
     <ClInclude Include="source\mfm\mfm_Game.h" />
+    <ClInclude Include="source\mfm\mfm_MineGenerator.h" />
     <ClInclude Include="source\mfm\mfm_TextureFrameAnimationTable.h" />
     <ClInclude Include="source\mfm\mfm_TextureTable.h" />
     <ClInclude Include="source\mfm\mfm_VersionInfo.h" />

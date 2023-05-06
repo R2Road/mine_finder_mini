@@ -6,11 +6,11 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "r2/r2_RangeInt.h"
+#include "mfm/mfm_MineGenerator.h"
 
 namespace test_mfm_mine_generator
 {
-	void PrintList( const std::list<r2::RangeInt>& l )
+	void PrintList( const std::list<r2::RangeUInt>& l )
 	{
 		const auto cursor_point = r2cm::WindowUtility::GetCursorPoint();
 
@@ -26,11 +26,42 @@ namespace test_mfm_mine_generator
 	}
 
 
+
+	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "Mine Generator : Declaration";
+		};
+	}
+	r2cm::DoFunctionT Declaration::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			std::cout << r2cm::split;
+
+			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
+
+			std::cout << r2cm::split;
+
+			{
+				EXPECT_EQ( 0, m.GetStart() );
+				EXPECT_EQ( 9, m.GetEnd() );
+			}
+
+			std::cout << r2cm::split;
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
+
+
+
 	r2cm::TitleFunctionT Do::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Splitter : Do";
+			return "Mine Generator : Do";
 		};
 	}
 	r2cm::DoFunctionT Do::GetDoFunction() const
@@ -39,8 +70,8 @@ namespace test_mfm_mine_generator
 		{
 			std::cout << r2cm::split;
 
-			DECLARATION_MAIN( std::list<r2::RangeInt> l );
-			PROCESS_MAIN( l.push_back( r2::RangeInt( 0, 9 ) ) );
+			DECLARATION_MAIN( std::list<r2::RangeUInt> l );
+			PROCESS_MAIN( l.push_back( r2::RangeUInt( 0, 9 ) ) );
 			PrintList( l );
 
 			std::cout << r2cm::split;
