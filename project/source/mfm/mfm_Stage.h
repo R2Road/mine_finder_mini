@@ -4,7 +4,7 @@
 
 namespace mfm
 {
-	using Tile = enum class Tile {
+	using Tile = enum class eTile {
 		Empty,
 		Mine,
 	};
