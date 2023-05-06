@@ -11,7 +11,7 @@ namespace test_mfm_mine_position_generator
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
 
-	class Do : public r2cm::iItem
+	class Get : public r2cm::iItem
 	{
 	public:
 		r2cm::TitleFunctionT GetTitleFunction() const override;

@@ -22,7 +22,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 	return []( r2cm::MenuProcessor* ret )
 	{
 		ret->AddItem( '1', test_mfm_mine_position_generator::Declaration() );
-		ret->AddItem( '2', test_mfm_mine_position_generator::Do() );
+		ret->AddItem( '2', test_mfm_mine_position_generator::Get() );
 		ret->AddItem( '3', test_mfm_mine_position_generator::Clear() );
 
 

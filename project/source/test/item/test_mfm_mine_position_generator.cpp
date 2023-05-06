@@ -93,14 +93,14 @@ namespace test_mfm_mine_position_generator
 
 
 
-	r2cm::TitleFunctionT Do::GetTitleFunction() const
+	r2cm::TitleFunctionT Get::GetTitleFunction() const
 	{
 		return []()->const char*
 		{
-			return "Mine Generator : Do";
+			return "Mine Generator : Get";
 		};
 	}
-	r2cm::DoFunctionT Do::GetDoFunction() const
+	r2cm::DoFunctionT Get::GetDoFunction() const
 	{
 		return []()->r2cm::eDoLeaveAction
 		{
