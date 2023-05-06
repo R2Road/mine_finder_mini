@@ -39,7 +39,6 @@ namespace mfm
 
 
 		void Clear();
-		void Ready();
 
 
 

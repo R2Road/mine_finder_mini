@@ -53,6 +53,11 @@ namespace test_mfm_mine_generator
 
 				EXPECT_EQ( 0, m.GetStart() );
 				EXPECT_EQ( 9, m.GetEnd() );
+
+				LF();
+
+				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
+				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
 			}
 
 			LS();
@@ -64,6 +69,11 @@ namespace test_mfm_mine_generator
 
 				EXPECT_EQ( 0, m.GetStart() );
 				EXPECT_EQ( 9, m.GetEnd() );
+
+				LF();
+
+				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
+				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
 			}
 
 			LS();
@@ -89,29 +99,10 @@ namespace test_mfm_mine_generator
 
 			DECLARATION_MAIN( mfm::MineGenerator m( 0, 9 ) );
 
-			LF();
-
-			EXPECT_TRUE( m.GetRangeContainer().empty() );
-
 			LS();
 
 			{
-				OUTPUT_SUBJECT( "Ready 함수는 생성자에서 주어진 Range 를 내부의 Range 컨테이너에 넣는다." );
-
-				LF();
-
-				PROCESS_MAIN( m.Ready() );
-
-				LF();
-
-				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
-				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
-			}
-
-			LS();
-
-			{
-				OUTPUT_SUBJECT( "Clear 내부의 Range 컨테이너를 비운다." );
+				OUTPUT_SUBJECT( "Clear() : Range 컨테이너를 비우고, 생성자에서 주어진 Range 를 채워넣는다." );
 
 				LF();
 
@@ -119,7 +110,8 @@ namespace test_mfm_mine_generator
 
 				LF();
 
-				EXPECT_TRUE( m.GetRangeContainer().empty() );
+				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
+				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
 			}
 
 			LS();
