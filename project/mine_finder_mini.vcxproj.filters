@@ -320,9 +320,6 @@
     <ClInclude Include="external\r2\r2_PointInt.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Queue.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Random.h">
       <Filter>external\r2</Filter>
     </ClInclude>
