@@ -19,16 +19,16 @@
     <Filter Include="external\r2cm">
       <UniqueIdentifier>{332270fb-7af5-4a37-a62b-23bc3e6c6758}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_mini_rogue">
+    <Filter Include="mfm">
       <UniqueIdentifier>{612fabcb-2d0b-441a-af05-d37b95425bec}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_mini_rogue\scene">
+    <Filter Include="mfm\scene">
       <UniqueIdentifier>{69aa6e91-e4c7-4ca0-a5fa-15b8d033fa47}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_mini_rogue\table">
+    <Filter Include="mfm\table">
       <UniqueIdentifier>{11a4e895-c09a-4486-8a8a-b92ffb22dfc3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="project_mini_rogue\config">
+    <Filter Include="mfm\config">
       <UniqueIdentifier>{bceb8d02-2491-44e8-9f8b-2e2173739028}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -240,22 +240,22 @@
       <Filter>external\r2cm</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_Game.cpp">
-      <Filter>project_mini_rogue</Filter>
+      <Filter>mfm</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_Zone.cpp">
-      <Filter>project_mini_rogue</Filter>
+      <Filter>mfm</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_CompanyScene.cpp">
-      <Filter>project_mini_rogue\scene</Filter>
+      <Filter>mfm\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_EntryScene.cpp">
-      <Filter>project_mini_rogue\scene</Filter>
+      <Filter>mfm\scene</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_TextureFrameAnimationTable.cpp">
-      <Filter>project_mini_rogue\table</Filter>
+      <Filter>mfm\table</Filter>
     </ClCompile>
     <ClCompile Include="source\mfm\mfm_TextureTable.cpp">
-      <Filter>project_mini_rogue\table</Filter>
+      <Filter>mfm\table</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_mfm_zone.cpp">
       <Filter>test\item</Filter>
@@ -576,31 +576,31 @@
       <Filter>external\r2cm</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_Game.h">
-      <Filter>project_mini_rogue</Filter>
+      <Filter>mfm</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_VersionInfo.h">
-      <Filter>project_mini_rogue</Filter>
+      <Filter>mfm</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_Zone.h">
-      <Filter>project_mini_rogue</Filter>
+      <Filter>mfm</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_CompanyScene.h">
-      <Filter>project_mini_rogue\scene</Filter>
+      <Filter>mfm\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_EntryScene.h">
-      <Filter>project_mini_rogue\scene</Filter>
+      <Filter>mfm\scene</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_TextureFrameAnimationTable.h">
-      <Filter>project_mini_rogue\table</Filter>
+      <Filter>mfm\table</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_TextureTable.h">
-      <Filter>project_mini_rogue\table</Filter>
+      <Filter>mfm\table</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_DebugConfig.h">
-      <Filter>project_mini_rogue\config</Filter>
+      <Filter>mfm\config</Filter>
     </ClInclude>
     <ClInclude Include="source\mfm\mfm_DirectorConfig.h">
-      <Filter>project_mini_rogue\config</Filter>
+      <Filter>mfm\config</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_mfm_zone.h">
       <Filter>test\item</Filter>
