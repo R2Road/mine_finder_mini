@@ -11,4 +11,14 @@ namespace mfm
 		)
 		, mRangeContainer()
 	{}
+
+	void MineGenerator::Clear()
+	{
+		mRangeContainer.clear();
+	}
+	void MineGenerator::Ready()
+	{
+		R2ASSERT( mRangeContainer.empty(), "" );
+		mRangeContainer.push_back( mRange );
+	}
 }

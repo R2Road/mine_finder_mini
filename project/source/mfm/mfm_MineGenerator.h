@@ -25,6 +25,15 @@ namespace mfm
 		{
 			return mRange;
 		}
+		const std::list<r2::RangeUInt>& GetRangeContainer() const
+		{
+			return mRangeContainer;
+		}
+
+
+
+		void Clear();
+		void Ready();
 
 
 
