@@ -1,4 +1,4 @@
-#include "test_mfm_zone.h"
+#include "test_mfm_stage.h"
 
 #include <conio.h>
 
@@ -6,7 +6,7 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "mfm/mfm_Zone.h"
+#include "mfm/mfm_Stage.h"
 
 namespace test_mfm_stage
 {

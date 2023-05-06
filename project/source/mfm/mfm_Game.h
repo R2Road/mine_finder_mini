@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mfm_Zone.h"
+#include "mfm_Stage.h"
 
 namespace mfm
 {
@@ -11,10 +11,10 @@ namespace mfm
 
 		const Stage& GetRoom() const
 		{
-			return mZone;
+			return mStage;
 		}
 
 	private:
-		Stage mZone;
+		Stage mStage;
 	};
 }

@@ -4,7 +4,7 @@
 #include "r2cm/r2cm_ostream.h"
 
 #include "item/test_mfm_mine_position_generator.h"
-#include "item/test_mfm_zone.h"
+#include "item/test_mfm_stage.h"
 
 r2cm::TitleFunctionT TestMenu::GetTitleFunction() const
 {

@@ -242,9 +242,6 @@
     <ClCompile Include="source\mfm\mfm_Game.cpp">
       <Filter>mfm</Filter>
     </ClCompile>
-    <ClCompile Include="source\mfm\mfm_Zone.cpp">
-      <Filter>mfm</Filter>
-    </ClCompile>
     <ClCompile Include="source\mfm\mfm_CompanyScene.cpp">
       <Filter>mfm\scene</Filter>
     </ClCompile>
@@ -257,9 +254,6 @@
     <ClCompile Include="source\mfm\mfm_TextureTable.cpp">
       <Filter>mfm\table</Filter>
     </ClCompile>
-    <ClCompile Include="source\test\item\test_mfm_zone.cpp">
-      <Filter>test\item</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2\r2_RangeInt.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
@@ -270,6 +264,12 @@
       <Filter>mfm</Filter>
     </ClCompile>
     <ClCompile Include="source\test\item\test_mfm_mine_position_generator.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mfm\mfm_Stage.cpp">
+      <Filter>mfm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_mfm_stage.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
   </ItemGroup>
@@ -587,9 +587,6 @@
     <ClInclude Include="source\mfm\mfm_VersionInfo.h">
       <Filter>mfm</Filter>
     </ClInclude>
-    <ClInclude Include="source\mfm\mfm_Zone.h">
-      <Filter>mfm</Filter>
-    </ClInclude>
     <ClInclude Include="source\mfm\mfm_CompanyScene.h">
       <Filter>mfm\scene</Filter>
     </ClInclude>
@@ -608,9 +605,6 @@
     <ClInclude Include="source\mfm\mfm_DirectorConfig.h">
       <Filter>mfm\config</Filter>
     </ClInclude>
-    <ClInclude Include="source\test\item\test_mfm_zone.h">
-      <Filter>test\item</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_Range.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -624,6 +618,12 @@
       <Filter>mfm</Filter>
     </ClInclude>
     <ClInclude Include="source\test\item\test_mfm_mine_position_generator.h">
+      <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="source\mfm\mfm_Stage.h">
+      <Filter>mfm</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_mfm_stage.h">
       <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
