@@ -260,6 +260,9 @@
     <ClCompile Include="source\test\item\test_mfm_zone.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_RangeInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -598,6 +601,12 @@
     </ClInclude>
     <ClInclude Include="source\test\item\test_mfm_zone.h">
       <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Range.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RangeInt.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

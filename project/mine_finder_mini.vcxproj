@@ -81,6 +81,7 @@
     <ClCompile Include="external\r2\r2_PointInt.cpp" />
     <ClCompile Include="external\r2\r2_PointUint.cpp" />
     <ClCompile Include="external\r2\r2_Random.cpp" />
+    <ClCompile Include="external\r2\r2_RangeInt.cpp" />
     <ClCompile Include="external\r2\r2_RectInt.cpp" />
     <ClCompile Include="external\r2\r2_RectTestUtility.cpp" />
     <ClCompile Include="external\r2\r2_SizeInt.cpp" />
@@ -184,6 +185,8 @@
     <ClInclude Include="external\r2\r2_PointUint.h" />
     <ClInclude Include="external\r2\r2_Queue.h" />
     <ClInclude Include="external\r2\r2_Random.h" />
+    <ClInclude Include="external\r2\r2_Range.h" />
+    <ClInclude Include="external\r2\r2_RangeInt.h" />
     <ClInclude Include="external\r2\r2_Rect.h" />
     <ClInclude Include="external\r2\r2_RectInt.h" />
     <ClInclude Include="external\r2\r2_RectTestUtility.h" />
