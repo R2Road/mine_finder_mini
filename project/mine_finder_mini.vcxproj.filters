@@ -527,9 +527,6 @@
     <ClInclude Include="external\r2\r2utility_StringDecomposition.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Grid.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2\r2_GridIndexConverter.h">
       <Filter>external\r2</Filter>
     </ClInclude>
@@ -622,6 +619,9 @@
     </ClInclude>
     <ClInclude Include="source\test\item\test_mfm_stage.h">
       <Filter>test\item</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_GridBasedOnVector.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
