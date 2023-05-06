@@ -193,6 +193,27 @@ namespace test_mfm_mine_position_generator
 			LS();
 
 			DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9 ) );
+			DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
+
+			LS();
+
+			{
+				PROCESS_MAIN( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+
+				LF();
+
+				PROCESS_MAIN( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+
+				LF();
+
+				PROCESS_MAIN( m.Get( &position ) );
+				OUTPUT_VALUE( position );
+				PrintList( m );
+			}
 
 			LS();
 
@@ -207,6 +228,7 @@ namespace test_mfm_mine_position_generator
 
 				EXPECT_EQ( 1u, m.GetRangeContainer().size() );
 				EXPECT_EQ( m.GetRange(), *m.GetRangeContainer().begin() );
+				PrintList( m );
 			}
 
 			LS();
