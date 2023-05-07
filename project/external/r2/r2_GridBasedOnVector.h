@@ -11,8 +11,8 @@
 // - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
 // - 0.0.1 : 자잘한 변화
 //
-// # Last Update		: 2023.05.07 AM.08.18
-// # Version			: 1.0.0
+// # Last Update		: 2023.05.07 AM.08.26
+// # Version			: 1.0.1
 //
 
 namespace r2
@@ -199,6 +199,10 @@ namespace r2
 				, &( *data.begin() )
 				, ( data.size() > mContainer.size() ? mContainer.size() * sizeof( CellT ) : data.size() * sizeof( CellT ) )
 			);
+		}
+		void Reset()
+		{
+			Reset( mWidth, mHeight );
 		}
 
 

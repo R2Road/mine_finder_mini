@@ -75,19 +75,32 @@ namespace test_mfm_stage
 		{
 			LS();
 
+			DECLARATION_MAIN( mfm::Stage s( 10, 10 ) );
+
+			LS();
+
 			{
-				DECLARATION_MAIN( mfm::Stage s( 10, 10 ) );
+				PrintRoom( s );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( s.Build() );
 
 				LF();
 
-				for( int y = 0; s.GetHeight() > y; ++y )
-				{
-					for( int x = 0; s.GetWidth() > x; ++x )
-					{
-						std::cout << s.GetTile( x, y ) << " ";
-					}
-					LF();
-				}
+				PrintRoom( s );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( s.Build() );
+
+				LF();
+
+				PrintRoom( s );
 			}
 
 			LS();

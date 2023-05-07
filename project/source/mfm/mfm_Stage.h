@@ -1,6 +1,6 @@
 #pragma once
 
-#include "r2/r2_Grid.h"
+#include "r2/r2_GridBasedOnVector.h"
 
 namespace mfm
 {
@@ -14,7 +14,7 @@ namespace mfm
 	class Stage
 	{
 	public:
-		using Terrain = r2::Grid<Tile>;
+		using Terrain = r2::GridBasedOnVector<Tile>;
 
 
 
@@ -54,9 +54,14 @@ namespace mfm
 
 
 
+		//
+		//
+		//
+		void Build();
+
+
+
 	private:
 		Terrain mTerrain;
 	};
-
-	void RoomBuilder( Stage* out_room );
 }

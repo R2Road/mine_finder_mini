@@ -1,6 +1,6 @@
 #include "mfm_Stage.h"
 
-#include "r2/r2_RectInt.h"
+#include "mfm_MinePositionGenerator.h"
 
 namespace mfm
 {
@@ -10,23 +10,18 @@ namespace mfm
 
 
 
-	void RoomBuilder( Stage* out_room )
+	void Stage::Build()
 	{
-		const r2::RectInt rect( 1, 1, static_cast<int>( out_room->GetWidth() ) - 3, static_cast<int>( out_room->GetHeight() ) - 3 );
+		mTerrain.Reset();
 
-		for( int y = 0; out_room->GetHeight() > y; ++y )
+		const int required_mine_count = static_cast<int>( mTerrain.GetSize() * 0.1f );
+		mfm::MinePositionGenerator mpg( 0, static_cast<unsigned int>( mTerrain.GetSize() ) - 1 );
+		mfm::MinePositionGenerator::ValueT position = 0;
+
+		for( int i = 0; required_mine_count > i; ++i )
 		{
-			for( int x = 0; out_room->GetWidth() > x; ++x )
-			{
-				if( rect.ContainsPoint( x, y ) )
-				{
-					out_room->SetTile( x, y, Tile::Empty );
-				}
-				else
-				{
-					out_room->SetTile( x, y, Tile::Mine );
-				}
-			}
+			mpg.Get( &position );
+			mTerrain.Set( position, Tile::Mine );
 		}
 	}
 }
