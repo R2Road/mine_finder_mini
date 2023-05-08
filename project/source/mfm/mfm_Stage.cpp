@@ -5,7 +5,7 @@
 namespace mfm
 {
 	Stage::Stage( const uint32_t width, const uint32_t height ) :
-		mTerrain( width, height, Tile::Empty )
+		mTerrain( width, height, Tile{ Tile::eType::Empty } )
 	{}
 
 
@@ -21,7 +21,7 @@ namespace mfm
 		for( int i = 0; required_mine_count > i; ++i )
 		{
 			mpg.Get( &position );
-			mTerrain.Set( position, Tile::Mine );
+			mTerrain.Set( position, Tile{ Tile::eType::Mine } );
 		}
 	}
 }

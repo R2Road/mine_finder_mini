@@ -4,9 +4,14 @@
 
 namespace mfm
 {
-	using Tile = enum class eTile {
-		Empty,
-		Mine,
+	struct Tile
+	{
+		enum class eType {
+			Empty,
+			Mine,
+		};
+
+		eType type;
 	};
 
 

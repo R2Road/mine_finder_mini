@@ -35,7 +35,7 @@ namespace mfmhelper
 			{
 				for( uint32_t cx = 0; cx < container.GetWidth(); ++cx )
 				{
-					if( mfm::Tile::Mine == container.GetTile( cx, cy ) )
+					if( mfm::Tile::eType::Mine == container.GetTile( cx, cy ).type )
 					{
 						r2cm::WindowUtility::FillColor(
 							{
