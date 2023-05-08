@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include <list>
 
 #include "r2/r2_Range.h"
@@ -15,7 +16,11 @@ namespace mfm
 
 
 
-		MinePositionGenerator( const unsigned int start, const unsigned int end );
+		using ValidationCheckerT = std::function<bool( int linear_index )>;
+
+
+
+		MinePositionGenerator( const unsigned int start, const unsigned int end, const ValidationCheckerT& validation_checker );
 
 
 
@@ -45,6 +50,8 @@ namespace mfm
 
 	private:
 		const ElementT mRange;
+		const ValidationCheckerT mValidationChecker;
+
 		ContainerT mRangeContainer;
 	};
 }

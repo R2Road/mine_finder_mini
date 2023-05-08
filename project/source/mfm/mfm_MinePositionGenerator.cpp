@@ -4,11 +4,12 @@
 
 namespace mfm
 {
-	MinePositionGenerator::MinePositionGenerator( const unsigned int start, const unsigned int end ) :
+	MinePositionGenerator::MinePositionGenerator( const unsigned int start, const unsigned int end, const ValidationCheckerT& validation_checker ) :
 		mRange(
 			start < end ? start : end
 			, start < end ? end : start
 		)
+		, mValidationChecker( validation_checker )
 		, mRangeContainer()
 	{
 		Clear();
@@ -35,7 +36,18 @@ namespace mfm
 				++range_itr;
 			}
 
-			*out_mine_linear_index = r2::Random::GetInt( range_itr->GetStart(), range_itr->GetEnd() );
+			//
+			// Select Mine Position
+			//
+			{
+				int attempt_count = 0;
+				do
+				{
+					++attempt_count;
+
+					*out_mine_linear_index = r2::Random::GetInt( range_itr->GetStart(), range_itr->GetEnd() );
+				} while( 2 < attempt_count && !mValidationChecker( *out_mine_linear_index ) );
+			}
 
 			const ElementT temp = *range_itr;
 

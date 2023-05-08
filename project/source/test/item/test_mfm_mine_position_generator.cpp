@@ -52,7 +52,7 @@ namespace test_mfm_mine_position_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9, []( int )->bool { return true; } ) );
 
 				LF();
 
@@ -72,7 +72,7 @@ namespace test_mfm_mine_position_generator
 
 				LF();
 
-				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 0 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 0, []( int )->bool { return true; } ) );
 
 				LF();
 
@@ -107,7 +107,7 @@ namespace test_mfm_mine_position_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 0 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 0, []( int )->bool { return true; } ) );
 				PrintList( m );
 
 				LF();
@@ -122,7 +122,7 @@ namespace test_mfm_mine_position_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 9 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 9, 9, []( int )->bool { return true; } ) );
 				PrintList( m );
 
 				LF();
@@ -137,7 +137,7 @@ namespace test_mfm_mine_position_generator
 			LS();
 
 			{
-				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 3 ) );
+				DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 3, []( int )->bool { return true; } ) );
 				DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
 
 				LF();
@@ -191,7 +191,7 @@ namespace test_mfm_mine_position_generator
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9 ) );
+			DECLARATION_MAIN( mfm::MinePositionGenerator m( 0, 9, []( int )->bool { return true; } ) );
 			DECLARATION_MAIN( mfm::MinePositionGenerator::ValueT position );
 
 			LS();
