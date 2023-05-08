@@ -14,7 +14,7 @@ namespace mfm
 	{
 		mTerrain.Reset();
 
-		const int required_mine_count = static_cast<int>( mTerrain.GetSize() * 0.1f );
+		const int required_mine_count = static_cast<int>( mTerrain.GetSize() * 0.15f );
 		mfm::MinePositionGenerator mpg( 0, static_cast<unsigned int>( mTerrain.GetSize() ) - 1 );
 		mfm::MinePositionGenerator::ValueT position = 0;
 
