@@ -6,31 +6,10 @@
 #include "r2cm/r2cm_ostream.h"
 #include "r2cm/r2cm_WindowUtility.h"
 
-#include "mfm/mfm_Stage.h"
+#include "mfm/mfmhelper_Printer4Stage.h"
 
 namespace test_mfm_stage
 {
-	std::ostream& operator<<( std::ostream& o, mfm::Tile t )
-	{
-		return o << static_cast<int>( t );
-	}
-
-	void PrintRoom( const mfm::Stage& s )
-	{
-		const auto pivot = r2cm::WindowUtility::GetCursorPoint();
-
-		for( int y = 0; s.GetHeight() > y; ++y )
-		{
-			for( int x = 0; s.GetWidth() > x; ++x )
-			{
-				std::cout << s.GetTile( x, y ) << " ";
-			}
-			LF();
-		}
-
-		r2cm::WindowUtility::MoveCursorPoint( { 0, pivot.y + (short)s.GetHeight() } );
-	}
-
 	r2cm::TitleFunctionT Declaration::GetTitleFunction() const
 	{
 		return []()->const char*
@@ -52,6 +31,10 @@ namespace test_mfm_stage
 				EXPECT_EQ( 2, s.GetWidth() );
 				EXPECT_EQ( 2, s.GetHeight() );
 				EXPECT_EQ( 4, s.GetSize() );
+
+				LF();
+
+				mfmhelper::Printer4Stage_CharOX::Print( 2, 0, s );
 			}
 
 			LS();
@@ -80,7 +63,7 @@ namespace test_mfm_stage
 			LS();
 
 			{
-				PrintRoom( s );
+				mfmhelper::Printer4Stage_CharOX::Print( 2, 0, s );
 			}
 
 			LS();
@@ -90,7 +73,7 @@ namespace test_mfm_stage
 
 				LF();
 
-				PrintRoom( s );
+				mfmhelper::Printer4Stage_CharOX::Print( 2, 0, s );
 			}
 
 			LS();
@@ -100,7 +83,7 @@ namespace test_mfm_stage
 
 				LF();
 
-				PrintRoom( s );
+				mfmhelper::Printer4Stage_CharOX::Print( 2, 0, s );
 			}
 
 			LS();
@@ -161,7 +144,7 @@ namespace test_mfm_stage
 					// View
 					//
 					r2cm::WindowUtility::MoveCursorPointWithClearBuffer( pivot_point );
-					PrintRoom( s );
+					mfmhelper::Printer4Stage_CharOX::Print( 2, 0, s );
 
 					//
 					// Input

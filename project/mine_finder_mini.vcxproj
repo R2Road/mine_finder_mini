@@ -205,6 +205,7 @@
     <ClInclude Include="external\r2\r2_ValueWithTracking.h" />
     <ClInclude Include="external\r2\r2_VersionInfo.h" />
     <ClInclude Include="source\DevelopmentMenu.h" />
+    <ClInclude Include="source\mfm\mfmhelper_Printer4Stage.h" />
     <ClInclude Include="source\mfm\mfm_CompanyScene.h" />
     <ClInclude Include="source\mfm\mfm_DebugConfig.h" />
     <ClInclude Include="source\mfm\mfm_DirectorConfig.h" />

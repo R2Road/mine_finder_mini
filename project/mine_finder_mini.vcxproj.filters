@@ -31,6 +31,9 @@
     <Filter Include="mfm\config">
       <UniqueIdentifier>{bceb8d02-2491-44e8-9f8b-2e2173739028}</UniqueIdentifier>
     </Filter>
+    <Filter Include="mfm\helper">
+      <UniqueIdentifier>{11860f2c-4f4a-4f85-aa19-4b82a1c079fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\DevelopmentMenu.cpp" />
@@ -622,6 +625,9 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_GridBasedOnVector.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="source\mfm\mfmhelper_Printer4Stage.h">
+      <Filter>mfm\helper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -37,6 +37,14 @@ namespace mfm
 		{
 			return mTerrain.GetSize();
 		}
+		std::size_t GetMaxX() const
+		{
+			return mTerrain.GetMaxX();
+		}
+		std::size_t GetMaxY() const
+		{
+			return mTerrain.GetMaxY();
+		}
 
 
 
