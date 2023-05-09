@@ -29,24 +29,37 @@ namespace mfm
 		{
 			ret = true;
 
-			const int range_index = r2::Random::GetInt( 0, static_cast<int>( mRangeContainer.size() - 1u ) );
-			auto range_itr = mRangeContainer.begin();
-			for( int i = 0; range_index > i; ++i )
-			{
-				++range_itr;
-			}
+			ContainerT::iterator range_itr;
 
 			//
 			// Select Mine Position
 			//
 			{
+				int range_index = 0;
+
 				int attempt_count = 0;
 				do
 				{
 					++attempt_count;
 
+					range_index = r2::Random::GetInt( 0, static_cast<int>( mRangeContainer.size() - 1u ) );
+					range_itr = mRangeContainer.begin();
+					for( int i = 0; range_index > i; ++i )
+					{
+						++range_itr;
+					}
+
 					*out_mine_linear_index = r2::Random::GetInt( range_itr->GetStart(), range_itr->GetEnd() );
-				} while( 2 < attempt_count && !mValidationChecker( *out_mine_linear_index ) );
+					if( 10 > attempt_count && !mValidationChecker( *out_mine_linear_index ) )
+					{
+						continue;
+					}
+					else
+					{
+						break;
+					}
+
+				} while( true );
 			}
 
 			const ElementT temp = *range_itr;
