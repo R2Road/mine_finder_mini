@@ -45,8 +45,8 @@ namespace r2
 		//
 		bool operator==( const MyT& other ) const
 		{
-			return ( mStart == other.GetStart() )
-				&& ( mEnd == other.GetEnd() );
+			return ( mStart == other.mStart )
+				&& ( mEnd == other.mEnd );
 		}
 		bool operator!=( const MyT& other ) const
 		{

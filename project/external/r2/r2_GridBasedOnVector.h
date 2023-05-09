@@ -200,6 +200,10 @@ namespace r2
 				, ( data.size() > mContainer.size() ? mContainer.size() * sizeof( CellT ) : data.size() * sizeof( CellT ) )
 			);
 		}
+		void Reset( const CellT fill_data )
+		{
+			Reset( mWidth, mHeight, fill_data );
+		}
 		void Reset()
 		{
 			Reset( mWidth, mHeight );

@@ -2,25 +2,45 @@
 
 #include <array>
 
-#include "r2_ListNode.h"
 #include "r2_Assert.h"
+#include "r2_Node4List.h"
+
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.05.07 AM.08.18
+// # Version			: 1.0.0
+//
 
 namespace r2
 {
-	template<typename T, uint32_t N>
-	class ListNodeAllocatorBasedOnArray
+	//
+	// # Warning
+	//
+	// ValueT 로 std::shared_ptr 등을 사용하고 있다면 Cleaner 를 ClearValue 로 설정.
+	//
+
+	template<typename T, uint32_t N, typename NodeCleaner = Node4ListCleaner_StayValue<T>>
+	class Node4ListAllocatorBasedOnArray
 	{
 	public:
 		using ValueT = T;
 		using SizeT = uint32_t;
 
-		using NodeT = ListNode<ValueT>;
+		using NodeT = Node4List<ValueT>;
 		using ContainerT = std::array<NodeT, N>;
 
-		ListNodeAllocatorBasedOnArray() : mContainer(), mHead( nullptr ), mSize( 0u )
+
+
+		Node4ListAllocatorBasedOnArray() : mContainer(), mNodeCleaner(), mHead( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
+
+
 
 		//
 		//
@@ -29,7 +49,7 @@ namespace r2
 		{
 			return mSize;
 		}
-		SizeT GetAllocatedSize() const
+		SizeT Capacity() const
 		{
 			return static_cast<SizeT>( mContainer.size() );
 		}
@@ -37,6 +57,8 @@ namespace r2
 		{
 			return ( 0u == mSize );
 		}
+
+
 
 		//
 		//
@@ -48,8 +70,7 @@ namespace r2
 			//
 			for( auto& n : mContainer )
 			{
-				n.pPrev = nullptr;
-				n.pNext = nullptr;
+				mNodeCleaner( &n );
 			}
 
 			//
@@ -73,12 +94,14 @@ namespace r2
 			mSize = static_cast<uint32_t>( mContainer.size() );
 		}
 
+
+
 		//
 		//
 		//
 		NodeT* Pop()
 		{
-			R2ASSERT( nullptr != mHead, "Empty : ListNodeAllocatorBasedOnArray::Pop()" );
+			R2ASSERT( nullptr != mHead, "Empty : Node4ListAllocatorBasedOnArray::Pop()" );
 
 			NodeT* ret = mHead;
 
@@ -92,9 +115,14 @@ namespace r2
 		}
 		void Push( NodeT* rest_node )
 		{
-			rest_node->pPrev = nullptr;
-			rest_node->pNext = nullptr;
+			//
+			//
+			//
+			mNodeCleaner( rest_node );
 
+			//
+			//
+			//
 			if( nullptr == mHead )
 			{
 				mHead = rest_node;
@@ -108,8 +136,11 @@ namespace r2
 			++mSize;
 		}
 
+
+
 	private:
 		ContainerT mContainer;
+		NodeCleaner mNodeCleaner;
 		NodeT* mHead;
 		SizeT mSize;
 	};

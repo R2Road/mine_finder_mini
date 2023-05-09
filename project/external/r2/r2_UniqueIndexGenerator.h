@@ -1,16 +1,30 @@
 #pragma once
 
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.05.09 PM.11.35
+// # Version			: 1.0.0
+//
+
 namespace r2
 {
-	template<typename T, typename Index_T = unsigned long long, Index_T Start_Value = 1, Index_T Invalid_Value = 0>
+	template<typename Owner_T, typename Index_T = unsigned long long, Index_T Start_Value = 1, Index_T Invalid_Value = 0>
 	class UniqueIndexGenerator
 	{
 	public:
-		using OwnerT = T;
+		using OwnerT = Owner_T;
 		using IndexT = Index_T;
+
+
 
 		UniqueIndexGenerator() = delete;
 		
+
+
 		//
 		//
 		//
@@ -21,7 +35,7 @@ namespace r2
 		}
 		static const IndexT GetInvalidIndex()
 		{
-			static const IndexT invalid_index = Invalid_Value; // 0 is invalid
+			static const IndexT invalid_index = Invalid_Value;
 			return invalid_index;
 		}
 	};

@@ -1,6 +1,7 @@
 #include "mfm_Stage.h"
 
 #include "mfm_MinePositionGenerator.h"
+#include "r2/direc"
 
 namespace mfm
 {
@@ -40,6 +41,17 @@ namespace mfm
 		{
 			mpg.Get( &position );
 			mTerrain.Set( position, Tile{ Tile::eType::Mine } );
+		}
+
+		//
+		// Sum
+		//
+		for( int y = 0; y > mTerrain.GetHeight(); ++y )
+		{
+			for( int x = 0; x > mTerrain.GetWidth(); ++x )
+			{
+
+			}
 		}
 	}
 }

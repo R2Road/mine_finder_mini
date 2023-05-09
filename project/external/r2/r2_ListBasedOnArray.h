@@ -1,60 +1,118 @@
 #pragma once
 
-#include <array>
-
-#include "r2_ListIterator.h"
-#include "r2_ListNodeAllocatorBasedOnArray.h"
+#include "r2_Node4ListAllocatorBasedOnArray.h"
+#include "r2_Node4ListIterator.h"
 
 #include "r2_Assert.h"
 
+//
+// # Version Rule
+// - 1.0.0 : 사용 가능
+// - 0.1.0 : 사용자가 코드를 바꿀 정도의 변화
+// - 0.0.1 : 자잘한 변화
+//
+// # Last Update		: 2023.05.07 AM.08.18
+// # Version			: 1.0.0
+//
+
 namespace r2
 {
-	template<typename T, uint32_t N>
+	//
+	// # Warning
+	//
+	// ValueT 로 std::shared_ptr 등을 사용하고 있다면 NodeCleaner 를 ListNodeCleaner_ClearValue 로 설정.
+	//
+
+	template<typename T, uint32_t N, typename NodeCleaner = Node4ListCleaner_StayValue<T>>
 	class ListBasedOnArray
 	{
 	public:
 		using ValueT = T;
 		using SizeT = uint32_t;
 
-		using NodeT = ListNode<ValueT>;
-		using ContainerT = ListNodeAllocatorBasedOnArray<ValueT, N + 1u>; // N + Head
+		using NodeT = Node4List<ValueT>;
+		using AllocatorT = Node4ListAllocatorBasedOnArray<ValueT, N + 1u, NodeCleaner>; // N + Head
 
-		using IteratorT = ListIterator<ValueT>;
-		//using iterator = ListIterator<ValueT>; // ...dev rule?
-		using ReverseIteratorT = ListReverseIterator<ValueT>;
+		using IteratorT = Node4ListIterator<ValueT>;
+		//using iterator = Node4ListIterator<ValueT>; // ...dev rule?
+		using ConstIteratorT = Node4ListConstIterator<ValueT>;
+		using ReverseIteratorT = Node4ListReverseIterator<ValueT>;
+		using ConstReverseIteratorT = Node4ListConstReverseIterator<ValueT>;
 
-		ListBasedOnArray() : mContainer(), mEnd( nullptr ), mSize( 0u )
+
+
+		ListBasedOnArray() : mAllocator(), mEndNode( nullptr ), mSize( 0u )
 		{
 			Clear();
 		}
 
+
+
 		//
 		// Iteration
 		//
-		IteratorT begin() { return IteratorT( mEnd->pNext ); }
-		IteratorT end() { return IteratorT( mEnd ); }
-		ReverseIteratorT rbegin() const { return ReverseIteratorT( mEnd->pPrev ); }
-		ReverseIteratorT rend() const { return ReverseIteratorT( mEnd ); }
+		IteratorT begin()
+		{
+			return IteratorT( mEndNode->pNext );
+		}
+		IteratorT end()
+		{
+			return IteratorT( mEndNode );
+		}
+		ConstIteratorT begin() const
+		{
+			return ConstIteratorT( mEndNode->pNext );
+		}
+		ConstIteratorT end() const
+		{
+			return ConstIteratorT( mEndNode );
+		}
 
+		ReverseIteratorT rbegin()
+		{
+			return ReverseIteratorT( mEndNode->pPrev );
+		}
+		ReverseIteratorT rend()
+		{
+			return ReverseIteratorT( mEndNode );
+		}
+		ConstReverseIteratorT rbegin() const
+		{
+			return ConstReverseIteratorT( mEndNode->pPrev );
+		}
+		ConstReverseIteratorT rend() const
+		{
+			return ConstReverseIteratorT( mEndNode );
+		}
+
+
+
+		//
+		//
+		//
 		void Clear()
 		{
 			//
 			// Clear
 			//
-			mContainer.Clear();
+			mAllocator.Clear();
 
 			//
 			// 4 Live
 			//
-			mEnd = mContainer.Pop();
+			mEndNode = mAllocator.Pop();
 
-			mEnd->pPrev = mEnd;
-			mEnd->pNext = mEnd;
+			mEndNode->pPrev = mEndNode;
+			mEndNode->pNext = mEndNode;
 
 			mSize = 0u;
 		}
 
-	public:
+
+
+		//
+		//
+		//
 		SizeT Size() const
 		{
 			return mSize;
@@ -65,52 +123,66 @@ namespace r2
 		}
 		SizeT GetRestNodeCount() const
 		{
-			return mContainer.Size();
+			return mAllocator.Size();
 		}
 
-		void PushFront( const ValueT new_value )
+
+
+		//
+		//
+		//
+		void PushFront( const ValueT& value )
 		{
-			if( mContainer.Empty() )
-			{
-				return;
-			}
-
-			auto new_front_node = mContainer.Pop();
-			new_front_node->MyValue = new_value;
-
-			// Prev
-			mEnd->pNext->pPrev = new_front_node;
-
-			// New
-			new_front_node->pPrev = mEnd;
-			new_front_node->pNext = mEnd->pNext;
-
-			// NExt
-			mEnd->pNext = new_front_node;
-
-			++mSize;
+			Insert( begin(), value );
 		}
-		void PushBack( const ValueT new_value )
+		void PushBack( const ValueT& value )
 		{
-			if( mContainer.Empty() )
+			Insert( end(), value );
+		}
+		IteratorT Insert( IteratorT pivot, const ValueT& value )
+		{
+			if( mAllocator.Empty() )
 			{
-				return;
+				return end();
 			}
 
-			auto new_back_node = mContainer.Pop();
-			new_back_node->MyValue = new_value;
+			auto node = mAllocator.Pop();
+			node->MyValue = value;
 
-			// Prev
-			mEnd->pPrev->pNext = new_back_node;
+			//
+			// ### pivot 의 앞에 새 노드를 배치한다.
+			//
 
-			// New
-			new_back_node->pPrev = mEnd->pPrev;
-			new_back_node->pNext = mEnd;
+			//
+			// 새 노드의 전, 후 설정
+			//
+			node->pPrev = pivot.mTargetNode->pPrev;
+			node->pNext = pivot.mTargetNode;
 
-			// Next
-			mEnd->pPrev = new_back_node;
+			//
+			// 이전 노드와 새 노드 연결
+			//
+			node->pPrev->pNext = node;
 
+			//
+			// Pivot Node 와 새 노드 연결
+			//
+			pivot.mTargetNode->pPrev = node;
+
+			//
+			//
+			//
 			++mSize;
+
+			return IteratorT( pivot.mTargetNode->pPrev );
+		}
+		void PopFront()
+		{
+			Erase( begin() );
+		}
+		void PopBack()
+		{
+			Erase( --end() );
 		}
 		IteratorT Erase( IteratorT target )
 		{
@@ -119,23 +191,52 @@ namespace r2
 				return end();
 			}
 
-			auto pPrev = target.mTargetNode->pPrev;
-			auto pNext = target.mTargetNode->pNext;
+			auto node = target;
+			++node;
 
-			pPrev->pNext = pNext;
-			pNext->pPrev = pPrev;
+			//
+			// 다음 노드와 이전 노드 연결
+			//
+			node.mTargetNode->pPrev = target.mTargetNode->pPrev;
 
+			//
+			// 이전 노드와 다음 노드 연결
+			//
+			target.mTargetNode->pPrev->pNext = node.mTargetNode;
+
+			//
+			//
+			//
+			mAllocator.Push( target.mTargetNode );
+
+			//
+			//
+			//
 			--mSize;
 
-			mContainer.Push( target.mTargetNode );
-
-			return IteratorT( pNext );
+			return node;
 		}
 
-	private:
-		ContainerT mContainer;
 
-		NodeT* mEnd;
+
+		//
+		// Get Value
+		//
+		const ValueT& Front() const
+		{
+			return mEndNode->pNext->MyValue;
+		}
+		const ValueT& Back() const
+		{
+			return mEndNode->pPrev->MyValue;
+		}
+
+
+
+	private:
+		AllocatorT mAllocator;
+
+		NodeT* mEndNode;
 		SizeT mSize;
 	};
 }

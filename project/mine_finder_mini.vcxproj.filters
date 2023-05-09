@@ -44,39 +44,6 @@
     <ClCompile Include="source\test\Utility4Test.cpp">
       <Filter>test</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_IndexEnumerator.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Log.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointFloat.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Random.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_RectInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_RectTestUtility.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_SizeInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2bix\r2bix_action_AnimationRequestAction.cpp">
       <Filter>external\r2bix</Filter>
     </ClCompile>
@@ -209,21 +176,6 @@
     <ClCompile Include="external\r2bix\r2bix_utility_PathUtil.cpp">
       <Filter>external\r2bix</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2utility_StringSize.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_Direction4State.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_PointUint.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="external\r2cm\r2cm_Director.cpp">
       <Filter>external\r2cm</Filter>
     </ClCompile>
@@ -257,12 +209,6 @@
     <ClCompile Include="source\mfm\mfm_TextureTable.cpp">
       <Filter>mfm\table</Filter>
     </ClCompile>
-    <ClCompile Include="external\r2\r2_RangeInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
-    <ClCompile Include="external\r2\r2_RangeUInt.cpp">
-      <Filter>external\r2</Filter>
-    </ClCompile>
     <ClCompile Include="source\mfm\mfm_MinePositionGenerator.cpp">
       <Filter>mfm</Filter>
     </ClCompile>
@@ -275,6 +221,54 @@
     <ClCompile Include="source\test\item\test_mfm_stage.cpp">
       <Filter>test\item</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction4SequentialState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_FPSTimer.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_GridIndexConverter.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_IndexEnumerator.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Log.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointFloat.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_PointUint.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_Random.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RangeInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RangeUInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_RectInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_SizeInt.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2_TimerFloat.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
+    <ClCompile Include="external\r2\r2utility_StringSize.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -283,93 +277,6 @@
     </ClInclude>
     <ClInclude Include="source\test\Utility4Test.h">
       <Filter>test</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Assert.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Counter.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_FPSTimer.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_IndexEnumerator.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListIterator.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListNode.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ListNodeAllocatorBasedOnArray.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Log.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Point.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointFloat.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Random.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Rect.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RectInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RectTestUtility.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Size.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_SizeInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Timer.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_TimerFloat.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_UniqueIndex.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_UniqueIndexGenerator.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ValueWithDirty.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ValueWithDirtyAndTracking.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_ValueWithTracking.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_VersionInfo.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_NoneCopyable.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_SingletonWithStaticVariable.h">
-      <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2bix\r2bix_action_AnimationRequestAction.h">
       <Filter>external\r2bix</Filter>
@@ -524,21 +431,6 @@
     <ClInclude Include="external\r2bix\r2bix_VersionInfo.h">
       <Filter>external\r2bix</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2utility_StringSize.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2utility_StringDecomposition.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_Direction4State.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_PointUint.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="external\r2cm\r2cm_ColorModifier.h">
       <Filter>external\r2cm</Filter>
     </ClInclude>
@@ -602,15 +494,6 @@
     <ClInclude Include="source\mfm\mfm_DirectorConfig.h">
       <Filter>mfm\config</Filter>
     </ClInclude>
-    <ClInclude Include="external\r2\r2_Range.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RangeInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
-    <ClInclude Include="external\r2\r2_RangeUInt.h">
-      <Filter>external\r2</Filter>
-    </ClInclude>
     <ClInclude Include="source\mfm\mfm_MinePositionGenerator.h">
       <Filter>mfm</Filter>
     </ClInclude>
@@ -623,11 +506,113 @@
     <ClInclude Include="source\test\item\test_mfm_stage.h">
       <Filter>test\item</Filter>
     </ClInclude>
+    <ClInclude Include="source\mfm\mfmhelper_Printer4Stage.h">
+      <Filter>mfm\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Assert.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Counter.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4Sequential.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction4SequentialState.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_FPSTimer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
     <ClInclude Include="external\r2\r2_GridBasedOnVector.h">
       <Filter>external\r2</Filter>
     </ClInclude>
-    <ClInclude Include="source\mfm\mfmhelper_Printer4Stage.h">
-      <Filter>mfm\helper</Filter>
+    <ClInclude Include="external\r2\r2_GridIndexConverter.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_IndexEnumerator.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_ListBasedOnArray.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Log.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4List.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4ListAllocatorBasedOnArray.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Node4ListIterator.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_NoneCopyable.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Point.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointFloat.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_PointUint.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Random.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Range.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RangeInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RangeUInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Rect.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_RectInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_SingletonWithStaticFunction.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Size.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_SizeInt.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Timer.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_TimerFloat.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_UniqueIndex.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_UniqueIndexGenerator.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_ValueWithDirty.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_VersionInfo.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_StringDecomposition.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2utility_StringSize.h">
+      <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

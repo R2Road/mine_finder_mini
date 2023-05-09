@@ -1,7 +1,9 @@
 #include <stdio.h>
 
 
-
+//
+// Debug Break
+//
 #define R2ASSERT_ENABLE_DEBUG_BREAK 1
 
 #if defined( R2ASSERT_ENABLE_DEBUG_BREAK ) && R2ASSERT_ENABLE_DEBUG_BREAK == 1
@@ -12,6 +14,9 @@
 
 
 
+//
+// Assertion
+//
 #define R2ASSERT_ENABLE_ASSERTION 0
 
 #if defined( R2ASSERT_ENABLE_ASSERTION ) && R2ASSERT_ENABLE_ASSERTION == 1
@@ -23,6 +28,9 @@
 
 
 
+//
+// Exception
+//
 #define R2ASSERT_ENABLE_EXCEPTION 0
 
 #if defined( R2ASSERT_ENABLE_EXCEPTION ) && R2ASSERT_ENABLE_EXCEPTION == 1
@@ -33,6 +41,9 @@
 
 
 
+//
+//
+//
 #define	R2ASSERT( condition, message )																\
 do {																								\
 	if( !( condition ) )																			\
@@ -43,4 +54,13 @@ do {																								\
 	}																								\
 																									\
 	R2ASSERT_ASSERTION( condition );																\
+} while( false )
+
+#define	R2ASSERT_FORCED( message )																	\
+do {																								\
+	printf( "[R2ASSERT_FORCED]" "\n" "Message : %s" "\n", message );								\
+	R2ASSERT_DEBUG_BREAK;																			\
+	R2ASSERT_EXCEPTION( message );																	\
+																									\
+	R2ASSERT_ASSERTION( false );																\
 } while( false )

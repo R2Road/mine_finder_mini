@@ -11,7 +11,8 @@ namespace mfm
 			Mine,
 		};
 
-		eType type;
+		eType type = eType::Empty;
+		char sum = 0;
 	};
 
 
