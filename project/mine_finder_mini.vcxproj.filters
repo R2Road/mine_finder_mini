@@ -269,6 +269,9 @@
     <ClCompile Include="external\r2\r2utility_StringSize.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp">
+      <Filter>external\r2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -612,6 +615,12 @@
       <Filter>external\r2</Filter>
     </ClInclude>
     <ClInclude Include="external\r2\r2utility_StringSize.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8Sequential.h">
+      <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="external\r2\r2_Direction8SequentialState.h">
       <Filter>external\r2</Filter>
     </ClInclude>
   </ItemGroup>

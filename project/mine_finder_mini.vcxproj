@@ -72,6 +72,7 @@
     <ClCompile Include="external\r2\r2utility_StringDecomposition.cpp" />
     <ClCompile Include="external\r2\r2utility_StringSize.cpp" />
     <ClCompile Include="external\r2\r2_Direction4SequentialState.cpp" />
+    <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp" />
     <ClCompile Include="external\r2\r2_FPSTimer.cpp" />
     <ClCompile Include="external\r2\r2_GridIndexConverter.cpp" />
     <ClCompile Include="external\r2\r2_IndexEnumerator.cpp" />
@@ -170,6 +171,8 @@
     <ClInclude Include="external\r2\r2_Counter.h" />
     <ClInclude Include="external\r2\r2_Direction4Sequential.h" />
     <ClInclude Include="external\r2\r2_Direction4SequentialState.h" />
+    <ClInclude Include="external\r2\r2_Direction8Sequential.h" />
+    <ClInclude Include="external\r2\r2_Direction8SequentialState.h" />
     <ClInclude Include="external\r2\r2_FPSTimer.h" />
     <ClInclude Include="external\r2\r2_GridBasedOnVector.h" />
     <ClInclude Include="external\r2\r2_GridIndexConverter.h" />
