@@ -23,9 +23,13 @@ namespace mfm
 			{
 				int temp = 0;
 
+				// Left
 				temp += ( Tile::eType::Empty == t.Get( linear_index - 1 ).type ? 1 : 0 );
+				// Right
 				temp += ( Tile::eType::Empty == t.Get( linear_index + 1 ).type ? 1 : 0 );
+				// Up( ? )
 				temp += ( Tile::eType::Empty == t.Get( linear_index - t.GetWidth() ).type ? 1 : 0 );
+				// Down( ? )
 				temp += ( Tile::eType::Empty == t.Get( linear_index + t.GetWidth() ).type ? 1 : 0 );
 
 				//
