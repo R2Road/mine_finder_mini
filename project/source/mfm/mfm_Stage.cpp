@@ -1,7 +1,7 @@
 #include "mfm_Stage.h"
 
 #include "mfm_MinePositionGenerator.h"
-#include "r2/direc"
+#include "r2/r2_Direction8Sequential.h"
 
 namespace mfm
 {
@@ -46,11 +46,26 @@ namespace mfm
 		//
 		// Sum
 		//
-		for( int y = 0; y > mTerrain.GetHeight(); ++y )
+		r2::Direction8Sequential dir;
+		for( int y = 0; mTerrain.GetHeight() > y; ++y )
 		{
-			for( int x = 0; x > mTerrain.GetWidth(); ++x )
+			for( int x = 0; mTerrain.GetWidth() > x; ++x )
 			{
+				auto& tile = mTerrain.Get( x, y );
 
+				dir.SetState( r2::Direction8Sequential::eState::Up );
+				for( int cur = 0, end = static_cast<int>( r2::Direction8Sequential::eState::SIZE ); end > cur; ++cur, dir.Rotate() )
+				{
+					if( !mTerrain.IsIn( x + dir.GetX(), y + dir.GetY() ) )
+					{
+						continue;
+					}
+
+					if( Tile::eType::Mine == mTerrain.Get( x + dir.GetX(), y + dir.GetY() ).type )
+					{
+						++tile.sum;
+					}
+				}
 			}
 		}
 	}

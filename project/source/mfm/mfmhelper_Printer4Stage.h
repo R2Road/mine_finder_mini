@@ -35,7 +35,9 @@ namespace mfmhelper
 			{
 				for( uint32_t cx = 0; cx < container.GetWidth(); ++cx )
 				{
-					if( mfm::Tile::eType::Mine == container.GetTile( cx, cy ).type )
+					const auto& tile = container.GetTile( cx, cy );
+
+					if( mfm::Tile::eType::Mine == tile.type )
 					{
 						r2cm::WindowUtility::FillColor(
 							{
@@ -52,14 +54,31 @@ namespace mfmhelper
 							, 'o'
 						);
 					}
-					else
+					else if( 0 < tile.sum )
+					{
+						r2cm::WindowUtility::FillColor(
+							{
+									static_cast<short>( pivot_x + ( cx * space_h ) )
+								,	static_cast<short>( pivot_y + ( cy * space_v ) )
+							}
+							, r2cm::WindowUtility::eColor::BG_Black | r2cm::WindowUtility::eColor::FG_Green
+						);
+						r2cm::WindowUtility::FillCharacter(
+							{
+									static_cast<short>( pivot_x + ( cx * space_h ) )
+								,	static_cast<short>( pivot_y + ( cy * space_v ) )
+							}
+							, 48 + tile.sum // number 2 char number
+						);
+					}
+					else //if( 0 == tile.sum )
 					{
 						r2cm::WindowUtility::FillCharacter(
 							{
 									static_cast<short>( pivot_x + ( cx * space_h ) )
 								,	static_cast<short>( pivot_y + ( cy * space_v ) )
 							}
-							, 'x'
+							, 48 + tile.sum // number 2 char number
 						);
 					}
 				}
