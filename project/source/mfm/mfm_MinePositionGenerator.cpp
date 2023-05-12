@@ -50,7 +50,7 @@ namespace mfm
 					}
 
 					*out_mine_linear_index = r2::Random::GetInt( range_itr->GetStart(), range_itr->GetEnd() );
-					if( 10 > attempt_count && !mValidationChecker( *out_mine_linear_index ) )
+					if( 20 > attempt_count && !mValidationChecker( *out_mine_linear_index ) )
 					{
 						continue;
 					}
