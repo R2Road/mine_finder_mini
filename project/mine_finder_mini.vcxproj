@@ -92,9 +92,11 @@
     <ClCompile Include="source\mfm\mfm_EntryScene.cpp" />
     <ClCompile Include="source\mfm\mfm_Game.cpp" />
     <ClCompile Include="source\mfm\mfm_MinePositionGenerator.cpp" />
+    <ClCompile Include="source\mfm\mfm_CursorIndicator.cpp" />
     <ClCompile Include="source\mfm\mfm_TextureFrameAnimationTable.cpp" />
     <ClCompile Include="source\mfm\mfm_TextureTable.cpp" />
     <ClCompile Include="source\mfm\mfm_Stage.cpp" />
+    <ClCompile Include="source\test\item\test_mfm_cursor_indicator.cpp" />
     <ClCompile Include="source\test\item\test_mfm_mine_position_generator.cpp" />
     <ClCompile Include="source\test\item\test_mfm_stage.cpp" />
     <ClCompile Include="source\test\TestMenu.cpp" />
@@ -210,10 +212,12 @@
     <ClInclude Include="source\mfm\mfm_EntryScene.h" />
     <ClInclude Include="source\mfm\mfm_Game.h" />
     <ClInclude Include="source\mfm\mfm_MinePositionGenerator.h" />
+    <ClInclude Include="source\mfm\mfm_CursorIndicator.h" />
     <ClInclude Include="source\mfm\mfm_TextureFrameAnimationTable.h" />
     <ClInclude Include="source\mfm\mfm_TextureTable.h" />
     <ClInclude Include="source\mfm\mfm_VersionInfo.h" />
     <ClInclude Include="source\mfm\mfm_Stage.h" />
+    <ClInclude Include="source\test\item\test_mfm_cursor_indicator.h" />
     <ClInclude Include="source\test\item\test_mfm_mine_position_generator.h" />
     <ClInclude Include="source\test\item\test_mfm_stage.h" />
     <ClInclude Include="source\test\TestMenu.h" />

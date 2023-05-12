@@ -272,6 +272,12 @@
     <ClCompile Include="external\r2\r2_Direction8SequentialState.cpp">
       <Filter>external\r2</Filter>
     </ClCompile>
+    <ClCompile Include="source\mfm\mfm_CursorIndicator.cpp">
+      <Filter>mfm</Filter>
+    </ClCompile>
+    <ClCompile Include="source\test\item\test_mfm_cursor_indicator.cpp">
+      <Filter>test\item</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\DevelopmentMenu.h" />
@@ -622,6 +628,12 @@
     </ClInclude>
     <ClInclude Include="external\r2\r2_Direction8SequentialState.h">
       <Filter>external\r2</Filter>
+    </ClInclude>
+    <ClInclude Include="source\mfm\mfm_CursorIndicator.h">
+      <Filter>mfm</Filter>
+    </ClInclude>
+    <ClInclude Include="source\test\item\test_mfm_cursor_indicator.h">
+      <Filter>test\item</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

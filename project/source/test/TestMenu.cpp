@@ -3,6 +3,7 @@
 #include "r2cm/r2cm_Director.h"
 #include "r2cm/r2cm_ostream.h"
 
+#include "item/test_mfm_cursor_indicator.h"
 #include "item/test_mfm_mine_position_generator.h"
 #include "item/test_mfm_stage.h"
 
@@ -31,9 +32,17 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 
 
-		ret->AddItem( 'q', test_mfm_stage::Declaration() );
-		ret->AddItem( 'w', test_mfm_stage::Builder() );
-		ret->AddItem( 'e', test_mfm_stage::Demo() );
+		ret->AddItem( 'q', test_mfm_cursor_indicator::Declaration() );
+
+
+
+		ret->AddLineFeed();
+
+
+
+		ret->AddItem( 'a', test_mfm_stage::Declaration() );
+		ret->AddItem( 's', test_mfm_stage::Builder() );
+		ret->AddItem( 'd', test_mfm_stage::Demo() );
 
 
 
