@@ -36,4 +36,61 @@ namespace test_mfm_cursor_indicator
 			return r2cm::eDoLeaveAction::Pause;
 		};
 	}
+
+
+
+	r2cm::TitleFunctionT Move::GetTitleFunction() const
+	{
+		return []()->const char*
+		{
+			return "CursorIndicator : Move";
+		};
+	}
+	r2cm::DoFunctionT Move::GetDoFunction() const
+	{
+		return []()->r2cm::eDoLeaveAction
+		{
+			LS();
+
+			DECLARATION_MAIN( mfm::CursorIndicator c( 2, 2 ) );
+			EXPECT_EQ( 0, c.GetCursorX() );
+			EXPECT_EQ( 0, c.GetCursorY() );
+
+			LS();
+
+			{
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Right ) );
+				EXPECT_EQ( 1, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Down ) );
+				EXPECT_EQ( 1, c.GetCursorX() );
+				EXPECT_EQ( 1, c.GetCursorY() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Left ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 1, c.GetCursorY() );
+			}
+
+			LS();
+
+			{
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Up ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+			}
+
+			LS();
+
+			return r2cm::eDoLeaveAction::Pause;
+		};
+	}
 }

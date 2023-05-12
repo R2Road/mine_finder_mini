@@ -7,6 +7,16 @@ namespace mfm
 	class CursorIndicator
 	{
 	public:
+		enum eMoveDirection
+		{
+			Up,
+			Down,
+			Left,
+			Right,
+		};
+
+
+
 		CursorIndicator( const uint32_t width, const uint32_t height );
 
 
@@ -30,6 +40,13 @@ namespace mfm
 		{
 			return mCursorY;
 		}
+
+
+
+		//
+		//
+		//
+		void Move( const eMoveDirection move_direction );
 
 
 

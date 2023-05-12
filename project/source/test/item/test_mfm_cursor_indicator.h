@@ -10,4 +10,11 @@ namespace test_mfm_cursor_indicator
 		r2cm::TitleFunctionT GetTitleFunction() const override;
 		r2cm::DoFunctionT GetDoFunction() const override;
 	};
+
+	class Move : public r2cm::iItem
+	{
+	public:
+		r2cm::TitleFunctionT GetTitleFunction() const override;
+		r2cm::DoFunctionT GetDoFunction() const override;
+	};
 }

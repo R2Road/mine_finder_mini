@@ -33,6 +33,7 @@ r2cm::WriteFunctionT TestMenu::GetWriteFunction() const
 
 
 		ret->AddItem( 'q', test_mfm_cursor_indicator::Declaration() );
+		ret->AddItem( 'w', test_mfm_cursor_indicator::Move() );
 
 
 
