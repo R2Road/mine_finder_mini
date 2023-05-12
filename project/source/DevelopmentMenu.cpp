@@ -40,6 +40,10 @@ r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 			+ "\n"
 			  "\n"
 			  "\n"
+			+ mfm::VersionInfo.String4SubjectAsAProgrammer
+			+ "\n"
+			  "\n"
+			  "\n"
 			+ mfm::VersionInfo.String4DevelopementRule
 			+ "\n"
 			  "\n"

@@ -30,6 +30,18 @@ namespace mfm
 
 
 
+		const char* const String4SubjectAsAProgrammer = {
+			"### 프로젝트 목표 | Subject Of A Project ###"
+			"\n"
+			"\n"	"1. 임의의 Grid Point를 선택 하는 과정에서 범위 분할을 통한 난수 생성 횟수 감소."
+			"\n"	"    "    "> 0 ~ 9 범위에서 난수를 생성하는 경우"
+			"\n"	"    "    "> 첫 난수가 5 면 0 ~ 4, 6 ~ 9 두개의 범위로 분할"
+			"\n"	"2. FloodFill Algorithm 사용"
+			"\n"	"    "    "> 다른 프로젝트에서 사용한 FolldFill Algorithm 코드를 가져와 이 곳에 맞게 조정"
+		};
+
+
+
 		const char* const String4DevelopementRule = {
 					"### Game 구성 ###"
 			"\n"
