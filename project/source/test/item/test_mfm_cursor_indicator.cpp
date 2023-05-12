@@ -52,37 +52,71 @@ namespace test_mfm_cursor_indicator
 		{
 			LS();
 
-			DECLARATION_MAIN( mfm::CursorIndicator c( 2, 2 ) );
-			EXPECT_EQ( 0, c.GetCursorX() );
-			EXPECT_EQ( 0, c.GetCursorY() );
-
-			LS();
-
 			{
+				OUTPUT_SUBJECT( "Move" );
+
+				LF();
+
+				DECLARATION_MAIN( mfm::CursorIndicator c( 2, 2 ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+
+				LF();
+
 				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Right ) );
 				EXPECT_EQ( 1, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+
+				LF();
+
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Down ) );
+				EXPECT_EQ( 1, c.GetCursorX() );
+				EXPECT_EQ( 1, c.GetCursorY() );
+
+				LF();
+
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Left ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 1, c.GetCursorY() );
+
+				LF();
+
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Up ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
 				EXPECT_EQ( 0, c.GetCursorY() );
 			}
 
 			LS();
 
 			{
+				OUTPUT_SUBJECT( "경계면 검사" );
+
+				LF();
+
+				DECLARATION_MAIN( mfm::CursorIndicator c( 1, 1 ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+
+				LF();
+
+				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Right ) );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
+
+				LF();
+
 				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Down ) );
-				EXPECT_EQ( 1, c.GetCursorX() );
-				EXPECT_EQ( 1, c.GetCursorY() );
-			}
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
 
-			LS();
+				LF();
 
-			{
 				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Left ) );
 				EXPECT_EQ( 0, c.GetCursorX() );
-				EXPECT_EQ( 1, c.GetCursorY() );
-			}
+				EXPECT_EQ( 0, c.GetCursorY() );
 
-			LS();
+				LF();
 
-			{
 				PROCESS_MAIN( c.Move( mfm::CursorIndicator::eMoveDirection::Up ) );
 				EXPECT_EQ( 0, c.GetCursorX() );
 				EXPECT_EQ( 0, c.GetCursorY() );
