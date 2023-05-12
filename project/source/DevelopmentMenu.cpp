@@ -44,7 +44,7 @@ r2cm::DescriptionFunctionT DevelopmentMenu::GetDescriptionFunction() const
 			+ "\n"
 			  "\n"
 			  "\n"
-			+ mfm::VersionInfo.String4Road2Version;
+			+ mfm::VersionInfo.String4Road2NextVersion;
 		return ret.c_str();
 	};
 }

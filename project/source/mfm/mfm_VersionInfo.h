@@ -64,7 +64,7 @@ namespace mfm
 			"\n"	"[o] " "Cleanup"
 		};
 
-		const char* const String4Road2Version = String4Road2Version_0_0_1_0;
+		const char* const String4Road2NextVersion = String4Road2Version_0_0_1_0;
 
 	} VersionInfo;
 }
