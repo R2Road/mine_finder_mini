@@ -21,14 +21,14 @@ namespace test_mfm_cursor_indicator
 			LS();
 
 			{
-				DECLARATION_MAIN( const mfm::CursorIndicator s( 2, 2 ) );
+				DECLARATION_MAIN( const mfm::CursorIndicator c( 2, 2 ) );
 
 				LF();
 
-				EXPECT_EQ( 2, s.GetWidth() );
-				EXPECT_EQ( 2, s.GetHeight() );
-				EXPECT_EQ( 0, s.GetCursorX() );
-				EXPECT_EQ( 0, s.GetCursorY() );
+				EXPECT_EQ( 2, c.GetWidth() );
+				EXPECT_EQ( 2, c.GetHeight() );
+				EXPECT_EQ( 0, c.GetCursorX() );
+				EXPECT_EQ( 0, c.GetCursorY() );
 			}
 
 			LS();
