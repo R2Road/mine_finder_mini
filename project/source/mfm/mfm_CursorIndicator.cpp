@@ -5,5 +5,7 @@ namespace mfm
 	CursorIndicator::CursorIndicator( const uint32_t width, const uint32_t height ) :
 		mWidth( width )
 		, mHeight( height )
+		, mCursorX( 0 )
+		, mCursorY( 0 )
 	{}
 }

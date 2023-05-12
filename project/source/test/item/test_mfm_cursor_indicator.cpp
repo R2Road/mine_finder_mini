@@ -27,6 +27,8 @@ namespace test_mfm_cursor_indicator
 
 				EXPECT_EQ( 2, s.GetWidth() );
 				EXPECT_EQ( 2, s.GetHeight() );
+				EXPECT_EQ( 0, s.GetCursorX() );
+				EXPECT_EQ( 0, s.GetCursorY() );
 			}
 
 			LS();

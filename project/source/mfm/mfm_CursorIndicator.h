@@ -22,11 +22,21 @@ namespace mfm
 		{
 			return mHeight;
 		}
+		uint32_t GetCursorX() const
+		{
+			return mCursorX;
+		}
+		uint32_t GetCursorY() const
+		{
+			return mCursorY;
+		}
 
 
 
 	private:
 		const uint32_t mWidth;
 		const uint32_t mHeight;
+		uint32_t mCursorX;
+		uint32_t mCursorY;
 	};
 }
