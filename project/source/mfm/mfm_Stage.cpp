@@ -36,7 +36,7 @@ namespace mfm
 				// 조건을 4 == temp 로 만들면 제법 띄엄 띄엄 나온다.
 				// 경향성을 조절 할 수 있는 알고리즘을 따로 만들면 어떨까?
 				//
-				return 3 <= temp;
+				return 4 == temp;
 			}
 		);
 		mfm::MinePositionGenerator::ValueT position = 0;
