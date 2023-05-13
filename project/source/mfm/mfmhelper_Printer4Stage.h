@@ -44,7 +44,7 @@ namespace mfmhelper
 									static_cast<short>( pivot_x + ( cx * space_h ) )
 								,	static_cast<short>( pivot_y + ( cy * space_v ) )
 							}
-							, r2cm::WindowUtility::eColor::BG_Blue | r2cm::WindowUtility::eColor::FG_White
+							, r2cm::WindowUtility::eColor::BG_Black | r2cm::WindowUtility::eColor::FG_Red
 						);
 						r2cm::WindowUtility::FillCharacter(
 							{
